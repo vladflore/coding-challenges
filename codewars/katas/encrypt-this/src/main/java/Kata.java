@@ -21,8 +21,4 @@ public class Kata {
         }
         return stringBuilder.toString();
     }
-
-    public static void main(String[] args) {
-        System.out.println(encryptThis("A wise old owl lived in an oak"));
-    }
 }

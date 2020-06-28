@@ -39,3 +39,4 @@ gildedrose-refactoring-kata.iml
 .classpath
 .project
 .settings/
+*.iml

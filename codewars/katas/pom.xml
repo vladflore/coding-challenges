@@ -24,6 +24,7 @@
 		<module>validate-pin</module>
 		<module>consecutive-strings</module>
 		<module>string-to-camelcase</module>
+		<module>encrypt-this</module>
 	</modules>
 
 	<dependencyManagement>
