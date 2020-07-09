@@ -4,7 +4,7 @@
 		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>dev.vladflore.codewars</groupId>
+	<groupId>tech.vladflore.codewars</groupId>
 	<artifactId>katas</artifactId>
 	<packaging>pom</packaging>
 	<version>1.0-SNAPSHOT</version>
@@ -25,7 +25,8 @@
 		<module>consecutive-strings</module>
 		<module>string-to-camelcase</module>
 		<module>encrypt-this</module>
-	</modules>
+        <module>equal-sides-of-an-array</module>
+    </modules>
 
 	<dependencyManagement>
 		<dependencies>

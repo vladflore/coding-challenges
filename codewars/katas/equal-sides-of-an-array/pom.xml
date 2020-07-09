@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>encrypt-this</artifactId>
+    <artifactId>equal-sides-of-an-array</artifactId>
 
     <dependencies>
         <dependency>
@@ -19,5 +19,5 @@
         </dependency>
     </dependencies>
 
-    
+
 </project>
