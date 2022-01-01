@@ -1,0 +1,41 @@
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.util.Scanner;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /*
+         * Enter your code here. Read input from STDIN. Print output to STDOUT. Your
+         * class should be named Solution.
+         */
+        Scanner scanner = new Scanner(System.in);
+        String password = scanner.nextLine();
+        try {
+            MessageDigest md = MessageDigest.getInstance("SHA-256");
+            byte[] digest = md.digest(password.getBytes(StandardCharsets.UTF_8));
+            // StringBuilder result = new StringBuilder();
+            // for (byte b : digest) {
+            //     result.append(String.format("%02x", b));
+            // }
+            // System.out.println(result);
+            System.out.println(bytesToHex(digest));
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
+        scanner.close();
+    }
+
+    private static String bytesToHex(byte[] hash) {
+        StringBuilder hexString = new StringBuilder(2 * hash.length);
+        for (int i = 0; i < hash.length; i++) {
+            String hex = Integer.toHexString(0xff & hash[i]);
+            if(hex.length() == 1) {
+                hexString.append('0');
+            }
+            hexString.append(hex);
+        }
+        return hexString.toString();
+    }
+}
