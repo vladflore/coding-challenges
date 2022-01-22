@@ -1,12 +1,13 @@
 |Status   	|Problem                                                    |
 |---	    |---	                                                    |
 |i   	    |Reverse string                                             |
-|tbi   	    |Valid palindrome                                           |
+|i   	    |Valid palindrome                                           |
 |tbi   	    |Vacuum cleaner route                                       |
-|tbi   	    |Correct capitalization                                     |
+|i   	    |Correct capitalization                                     |
 |tbi   	    |Add binary                                                 |
 |tbi   	    |Longest common prefix                                      |
-|tbi   	    |Valid palindrome with removal                              |
+|i   	    |Valid palindrome with removal                              |
+|tbi   	    |Two sum                                                    |
 
 Legend:
 * i -> implemented
