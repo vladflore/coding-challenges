@@ -1,3 +1,5 @@
+package grokking_coding_interview.sliding_window_pattern;
+
 import java.util.HashMap;
 import java.util.Map;
 
