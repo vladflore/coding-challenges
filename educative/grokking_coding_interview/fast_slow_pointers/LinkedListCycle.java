@@ -1,4 +1,4 @@
-package fast_slow_pointers;
+package grokking_coding_interview.fast_slow_pointers;
 
 public class LinkedListCycle {
 
