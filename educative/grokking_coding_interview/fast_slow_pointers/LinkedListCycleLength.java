@@ -38,12 +38,3 @@ public class LinkedListCycleLength {
         System.out.println("LinkedList cycle length: " + LinkedListCycleLength.findCycleLength(head));
     }
 }
-
-class ListNode {
-    int value = 0;
-    ListNode next;
-
-    ListNode(int value) {
-        this.value = value;
-    }
-}
