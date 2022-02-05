@@ -40,3 +40,4 @@ gildedrose-refactoring-kata.iml
 .project
 .settings/
 *.iml
+.vscode
