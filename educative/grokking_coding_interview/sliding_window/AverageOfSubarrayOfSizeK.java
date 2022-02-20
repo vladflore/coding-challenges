@@ -1,5 +1,3 @@
-package grokking_coding_interview.sliding_window_pattern;
-
 import java.util.Arrays;
 
 class AverageOfSubarrayOfSizeK {

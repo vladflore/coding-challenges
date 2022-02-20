@@ -1,4 +1,3 @@
-package grokking_coding_interview.sliding_window_pattern;
 
 public class MinSizeSubarrayWithGreaterSum {
     private static int findMinSubArray(int targetSum, int[] arr) {

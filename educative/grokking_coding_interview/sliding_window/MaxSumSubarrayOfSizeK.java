@@ -1,4 +1,3 @@
-package grokking_coding_interview.sliding_window_pattern;
 
 class MaxSumSubArrayOfSizeK {
     public static int findMaxSumSubArray(int k, int[] arr) {
