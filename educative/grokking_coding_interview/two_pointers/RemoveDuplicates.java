@@ -1,4 +1,3 @@
-package grokking_coding_interview.two_pointers;
 
 public class RemoveDuplicates {
 
