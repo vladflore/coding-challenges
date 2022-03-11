@@ -1,3 +1,5 @@
+package tech.vladflore.educative.sliding_window;
+
 public class LongestSubstringWithSameLetterAfterReplacement {
 
     public static int findLength(String str, int k) {
