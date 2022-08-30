@@ -1,3 +1,5 @@
+package tech.vladflore.module2;
+
 import java.util.Arrays;
 
 class CheckRemoveEven {
