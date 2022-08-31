@@ -2,7 +2,7 @@ package tech.vladflore.module2;
 
 import java.util.Arrays;
 
-class CheckRemoveEven {
+class RemoveEven {
 
 	public static int[] removeEven(int[] arr) {
 		int count = 0;
@@ -22,6 +22,6 @@ class CheckRemoveEven {
 	}
 
     public static void main(String[] args){
-        System.out.println(Arrays.toString(CheckRemoveEven.removeEven(new int[]{1,2,3,4,5,6,7,8,9})));
+        System.out.println(Arrays.toString(RemoveEven.removeEven(new int[]{1,2,3,4,5,6,7,8,9})));
     }
 }

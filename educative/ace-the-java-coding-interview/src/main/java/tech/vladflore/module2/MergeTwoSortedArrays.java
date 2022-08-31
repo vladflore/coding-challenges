@@ -2,7 +2,7 @@ package tech.vladflore.module2;
 
 import java.util.Arrays;
 
-public class CheckMergeArray { 
+public class MergeTwoSortedArrays {
     public static int[] mergeArrays(int[] arr1, int[] arr2) {
         int len1 = arr1.length;
         int len2 = arr2.length;
@@ -29,6 +29,6 @@ public class CheckMergeArray {
     }
 
     public static void main(String[] args){
-        System.out.println(Arrays.toString(CheckMergeArray.mergeArrays(new int[]{1,3,4,5}, new int[]{2,6})));
+        System.out.println(Arrays.toString(MergeTwoSortedArrays.mergeArrays(new int[]{1,3,4,5}, new int[]{2,6})));
     }
 }
