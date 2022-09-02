@@ -1,4 +1,4 @@
-package tech.vladflore.module2;
+package tech.vladflore.module2.arrays;
 
 import java.util.ArrayDeque;
 import java.util.Arrays;

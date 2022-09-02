@@ -1,4 +1,4 @@
-package tech.vladflore.module2;
+package tech.vladflore.module2.arrays;
 
 import java.util.Arrays;
 import java.util.HashSet;
