@@ -4,4 +4,4 @@
 | 2  | reverse an array | | | |
 | 3  | pair with given sum in a sorted array | | | |
 | 4  | move zeros to end of array | | | |
-| 5  | sum of three values | | | |
+| 5  | sum of three values | two pointers | [SumOfThree.java](SumOfThree.java) | `javac --release 22 --enable-preview SumOfThree.java && java --enable-preview SumOfThree` |
