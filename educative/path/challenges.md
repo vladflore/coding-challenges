@@ -9,3 +9,8 @@
 | 7  | linked list cycle | fast slow pointers | [CycleDetection.java](CycleDetection.java) | `javac --release 22 --enable-preview CycleDetection.java && java --enable-preview CycleDetection` |
 | 8  | middle of the linked list | fast slow pointers | []() | `javac --release 22 --enable-preview TODO.java && java --enable-preview TODO` |
 | 8  | detect cycle in an array | fast slow pointers | []() | `javac --release 22 --enable-preview TODO.java && java --enable-preview TODO` |
+| 9  | reverse a string using stack | stacks | []() | `javac --release 22 --enable-preview TODO.java && java --enable-preview TODO` |
+| 10 | evaluate postfix expression | stacks | []() | `javac --release 22 --enable-preview TODO.java && java --enable-preview TODO` |
+| 11 | balanced parantheses in a mathematical expression | stacks | []() | `javac --release 22 --enable-preview TODO.java && java --enable-preview TODO` |
+| 12 | convert infix to postfix | stacks | []() | `javac --release 22 --enable-preview TODO.java && java --enable-preview TODO` |
+| 13 | remove all adjacent duplicates in string | stacks | []() | `javac --release 22 --enable-preview TODO.java && java --enable-preview TODO` |
