@@ -13,4 +13,4 @@
 | 10 | evaluate postfix expression | stacks | []() | `javac --release 22 --enable-preview TODO.java && java --enable-preview TODO` |
 | 11 | balanced parantheses in a mathematical expression | stacks | []() | `javac --release 22 --enable-preview TODO.java && java --enable-preview TODO` |
 | 12 | convert infix to postfix | stacks | []() | `javac --release 22 --enable-preview TODO.java && java --enable-preview TODO` |
-| 13 | remove all adjacent duplicates in string | stacks | []() | `javac --release 22 --enable-preview TODO.java && java --enable-preview TODO` |
+| 13 | remove all adjacent duplicates in string | stacks | [RemoveAdjecentDuplicates.java](RemoveAdjecentDuplicates.java) | `javac --release 22 --enable-preview TODO.java && java --enable-preview TODO` |
