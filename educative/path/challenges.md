@@ -7,7 +7,7 @@
 | 5  | sum of three values | two pointers | [SumOfThree.java](SumOfThree.java) | `javac --release 22 --enable-preview SumOfThree.java && java --enable-preview SumOfThree` |
 | 6  | happy number | fast slow pointers | [HappyNumber.java](HappyNumber.java) | `javac --release 22 --enable-preview HappyNumber.java && java --enable-preview HappyNumber` |
 | 7  | linked list cycle | fast slow pointers | [CycleDetection.java](CycleDetection.java) | `javac --release 22 --enable-preview CycleDetection.java && java --enable-preview CycleDetection` |
-| 8  | middle of the linked list | fast slow pointers | []() | `javac --release 22 --enable-preview TODO.java && java --enable-preview TODO` |
+| 8  | middle of the linked list(odd number of elements) | fast slow pointers | [LinkedListMiddle.java](LinkedListMiddle.java) | `javac --release 22 --enable-preview LinkedListMiddle.java && java --enable-preview LinkedListMiddle` |
 | 8  | detect cycle in an array | fast slow pointers | []() | `javac --release 22 --enable-preview TODO.java && java --enable-preview TODO` |
 | 9  | reverse a string using stack | stacks | []() | `javac --release 22 --enable-preview TODO.java && java --enable-preview TODO` |
 | 10 | evaluate postfix expression | stacks | []() | `javac --release 22 --enable-preview TODO.java && java --enable-preview TODO` |

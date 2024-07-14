@@ -34,6 +34,22 @@ public class LinkedList<T> {
         }
     }
 
+    @Override
+    public String toString() {
+        Node<T> temp = head;
+        var sb = new StringBuffer();
+        while (temp != null) {
+            sb.append(temp.data);
+            temp = temp.next;
+            if (temp != null) {
+                sb.append(" -> ");
+            } else {
+                sb.append(" -> null");
+            }
+        }
+        return sb.toString();
+    }
+
     public Optional<Node<T>> getNode(int nodeIndex) {
         if (nodeIndex < 0 || nodeIndex > size - 1) {
             return Optional.empty();
