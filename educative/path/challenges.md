@@ -17,5 +17,5 @@
 | 14 | implement queue using stacks | stacks | [Queue.java](Queue.java) | `javac --release 22 --enable-preview Queue.java && java --enable-preview Queue` |
 | 15 | contains duplicate II </br>(given array `nums` and integer `k`, find integers `i` and `j`, so that `nums[i] == nums[j]` and `abs(i-j) <= k`) | tracking | []() | `` |
 | 16 | count prefixes of a given string </br> (given array `words` and `s`, count how many words are prefixes of `s` ) | tracking | []() | `` |
-| 17 | palindrome permutations </br> given a string, find whether or not a permutation is a palindrome | tracking | []() | `` |
+| 17 | palindrome permutations </br> given a string, find whether or not a permutation is a palindrome | tracking | [PalindromePermutation.java](PalindromePermutation.java) | `javac --release 22 --enable-preview PalindromePermutation.java && java --enable-preview PalindromePermutation` |
 | 18 | valid anagram | tracking | []() | `` |
