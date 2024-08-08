@@ -19,3 +19,4 @@
 | 16 | count prefixes of a given string </br> (given array `words` and `s`, count how many words are prefixes of `s` ) | tracking | []() | `` |
 | 17 | palindrome permutations </br> given a string, find whether or not a permutation is a palindrome | tracking | [PalindromePermutation.java](PalindromePermutation.java) | `javac --release 22 --enable-preview PalindromePermutation.java && java --enable-preview PalindromePermutation` |
 | 18 | valid anagram | tracking | [ValidAnagram.java](ValidAnagram.java) | `javac --release 22 --enable-preview ValidAnagram.java && java --enable-preview ValidAnagram` |
+| 19 | binary search implementation | binary seach | [BinarySearch.java](BinarySearch.java) | `javac --release 22 --enable-preview BinarySearch.java && java --enable-preview BinarySearch` |
