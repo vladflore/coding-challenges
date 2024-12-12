@@ -31,7 +31,7 @@ public class ValidAnagram {
             freq.computeIfPresent(c, (k, v) -> v - 1);
         }
 
-        long max = freq.values().stream().max(Long::compare).orElseGet(() -> 0L);
+        long max = freq.values().stream().max(Long::compare).orElse(0L);
 
         return max == 0;
     }

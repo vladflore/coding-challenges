@@ -1,9 +1,9 @@
 public class HappyNumber {
     public static void main(String args[]) {
-        int a[] = { 1, 5, 19, 25, 7 };
-        for (int i = 0; i < a.length; i++) {
-            boolean isHappyNumber = isHappy(a[i]);
-            System.out.println("%d %s a happy number".formatted(a[i], isHappyNumber ? "is" : "is not"));
+        int[] a = { 1, 5, 19, 25, 7 };
+        for (int j : a) {
+            boolean isHappyNumber = isHappy(j);
+            System.out.printf("%d %s a happy number%n", j, isHappyNumber ? "is" : "is not");
         }
     }
 
@@ -11,7 +11,7 @@ public class HappyNumber {
         int sum = 0;
         while (n != 0) {
             int digit = n % 10;
-            sum += Math.pow(digit, 2);
+            sum += (int) Math.pow(digit, 2);
             n = n / 10;
         }
         return sum;
