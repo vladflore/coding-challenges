@@ -13,10 +13,13 @@
 | 10 | evaluate postfix expression | stacks | []() | `javac --release 22 --enable-preview TODO.java && java --enable-preview TODO` |
 | 11 | balanced parantheses in a mathematical expression | stacks | []() | `javac --release 22 --enable-preview TODO.java && java --enable-preview TODO` |
 | 12 | convert infix to postfix | stacks | []() | `javac --release 22 --enable-preview TODO.java && java --enable-preview TODO` |
-| 13 | remove all adjacent duplicates in string | stacks | [RemoveAdjecentDuplicates.java](RemoveAdjecentDuplicates.java) | `javac --release 22 --enable-preview RemoveAdjecentDuplicates.java && java --enable-preview RemoveAdjecentDuplicates` |
+| 13 | remove all adjacent duplicates in string | stacks | [RemoveAdjacentDuplicates.java](RemoveAdjecentDuplicates.java) | `javac --release 22 --enable-preview RemoveAdjacentDuplicates.java && java --enable-preview RemoveAdjacentDuplicates` |
 | 14 | implement queue using stacks | stacks | [Queue.java](Queue.java) | `javac --release 22 --enable-preview Queue.java && java --enable-preview Queue` |
 | 15 | contains duplicate II </br>(given array `nums` and integer `k`, find integers `i` and `j`, so that `nums[i] == nums[j]` and `abs(i-j) <= k`) | tracking | []() | `` |
 | 16 | count prefixes of a given string </br> (given array `words` and `s`, count how many words are prefixes of `s` ) | tracking | []() | `` |
 | 17 | palindrome permutations </br> given a string, find whether or not a permutation is a palindrome | tracking | [PalindromePermutation.java](PalindromePermutation.java) | `javac --release 22 --enable-preview PalindromePermutation.java && java --enable-preview PalindromePermutation` |
 | 18 | valid anagram | tracking | [ValidAnagram.java](ValidAnagram.java) | `javac --release 22 --enable-preview ValidAnagram.java && java --enable-preview ValidAnagram` |
 | 19 | binary search implementation | binary seach | [BinarySearch.java](BinarySearch.java) | `javac --release 22 --enable-preview BinarySearch.java && java --enable-preview BinarySearch` |
+| 20 | reverse linked list | in-place manipulation of linked list | [ReverseLinkedList.java](ReverseLinkedList.java) | `javac --release 22 --enable-preview ReverseLinkedList.java && java --enable-preview ReverseLinkedList` |
+| 21 | reverse second half of linked list | in-place manipulation of linked list | [ReverseSecondHalfLinkedList.java](ReverseSecondHalfLinkedList.java) | `javac --release 22 --enable-preview ReverseSecondHalfLinkedList.java && java --enable-preview ReverseSecondHalfLinkedList` |
+| 22 | rotate a linked list clockwise k times | in-place manipulation of linked list | [RotateClockwiseLinkedList.java](RotateClockwiseLinkedList.java) | `javac --release 22 --enable-preview RotateClockwiseLinkedList.java && java --enable-preview RotateClockwiseLinkedList` |
