@@ -14,7 +14,7 @@ def roman_to_integer(roman_string: str) -> int:
 
     for i, roman_char in enumerate(roman_string):
         current_value = roman_values[roman_char]
-        if current_value > previous_value and i > 0:
+        if current_value > previous_value:
             value += current_value - 2 * previous_value
         else:
             value += current_value
