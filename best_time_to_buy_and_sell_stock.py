@@ -15,7 +15,7 @@ def max_profit(prices):
 
     return max_profit
 
-if __name__ == "__main__":
-    assert 5 == max_profit([7,1,5,3,6,4])
-    assert 0 == max_profit([7,6,4,3,1])
 
+if __name__ == "__main__":
+    assert 5 == max_profit([7, 1, 5, 3, 6, 4])
+    assert 0 == max_profit([7, 6, 4, 3, 1])
