@@ -1,14 +1,16 @@
+import os
+
 import markdown
 
-import os
+EXCLUDE_FILES = ["README.md"]
 
 folder_path = os.path.expanduser("~/dev/sandbox/coding-challenges/")
 
 for filename in os.listdir(folder_path):
-    if filename.endswith(".md"):
+    if filename.endswith(".md") and filename not in EXCLUDE_FILES:
         base_name = os.path.splitext(filename)[0]
         md_path = os.path.join(folder_path, filename)
-        html_filename = f"{base_name}___info.html"
+        html_filename = f"{base_name}.html"
         html_path = os.path.join(folder_path, html_filename)
 
         with open(md_path, "r") as f:
