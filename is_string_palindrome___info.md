@@ -1,1 +1,6 @@
-Dummy content for: is_string_palindrome.py
+### Statement
+is_string_palindrome
+### Solution
+tbd
+### Examples
+tbd

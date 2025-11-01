@@ -1,1 +1,6 @@
-Dummy content for: group_anagrams.py
+### Statement
+group_anagrams
+### Solution
+tbd
+### Examples
+tbd

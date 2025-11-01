@@ -1,1 +1,6 @@
-Dummy content for: generate_parantheses.py
+### Statement
+generate_parantheses
+### Solution
+tbd
+### Examples
+tbd

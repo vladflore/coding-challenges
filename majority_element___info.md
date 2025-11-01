@@ -1,1 +1,6 @@
-Dummy content for: majority_element.py
+### Statement
+majority_element
+### Solution
+tbd
+### Examples
+tbd

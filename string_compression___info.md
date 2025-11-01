@@ -1,1 +1,6 @@
-Dummy content for: string_compression.py
+### Statement
+string_compression
+### Solution
+tbd
+### Examples
+tbd

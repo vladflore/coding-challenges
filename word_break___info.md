@@ -1,1 +1,6 @@
-Dummy content for: word_break.py
+### Statement
+word_break
+### Solution
+tbd
+### Examples
+tbd

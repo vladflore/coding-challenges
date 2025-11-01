@@ -1,1 +1,6 @@
-Dummy content for: LongestCommonPrefix.java
+### Statement
+LongestCommonPrefix
+### Solution
+tbd
+### Examples
+tbd

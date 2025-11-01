@@ -1,1 +1,6 @@
-Dummy content for: is_palindrome.py
+### Statement
+is_palindrome
+### Solution
+tbd
+### Examples
+tbd

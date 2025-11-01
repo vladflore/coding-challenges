@@ -1,1 +1,6 @@
-Dummy content for: merge_sorted_arrays.py
+### Statement
+merge_sorted_arrays
+### Solution
+tbd
+### Examples
+tbd

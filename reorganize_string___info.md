@@ -1,1 +1,6 @@
-Dummy content for: reorganize_string.py
+### Statement
+reorganize_string
+### Solution
+tbd
+### Examples
+tbd

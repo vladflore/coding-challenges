@@ -1,1 +1,6 @@
-Dummy content for: longest_substring_without_repeating_characters.py
+### Statement
+longest_substring_without_repeating_characters
+### Solution
+tbd
+### Examples
+tbd

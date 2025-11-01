@@ -1,1 +1,6 @@
-Dummy content for: merge_two_sorted_lists.py
+### Statement
+merge_two_sorted_lists
+### Solution
+tbd
+### Examples
+tbd

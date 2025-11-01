@@ -1,1 +1,6 @@
-Dummy content for: longest_palindrome_substring.py
+### Statement
+longest_palindrome_substring
+### Solution
+tbd
+### Examples
+tbd

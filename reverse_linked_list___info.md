@@ -1,1 +1,6 @@
-Dummy content for: reverse_linked_list.py
+### Statement
+reverse_linked_list
+### Solution
+tbd
+### Examples
+tbd

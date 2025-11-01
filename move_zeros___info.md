@@ -1,1 +1,6 @@
-Dummy content for: move_zeros.py
+### Statement
+move_zeros
+### Solution
+tbd
+### Examples
+tbd
