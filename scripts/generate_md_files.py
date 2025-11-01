@@ -10,8 +10,6 @@ for filename in os.listdir(folder_path):
         content = f"""### Statement
 {base_name}
 ### Solution
-tbd
-### Examples
 tbd"""
         with open(md_path, "w") as f:
             f.write(content)
