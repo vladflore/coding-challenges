@@ -1,36 +1,18 @@
-import markdown
+import os
 
-md_text = """
-### Problem Statement
+folder_path = os.path.expanduser("~/dev/sandbox/coding-challenges/")
 
-We need to determine whether a list of integers contains any duplicate values. In other words, if any number appears more than once in the list, the function should return `True`; otherwise, it should return `False`.
-
-### Explanation of the Solution
-
-The provided function `contains_duplicate(numbers: list[int]) -> bool` solves this problem efficiently using a **set** to keep track of the numbers that have already been seen while iterating through the list.
-
-Here’s how it works step by step:
-
-1. **Initialize an empty set** called `seen`.
-   A set automatically prevents duplicate elements, making it ideal for this problem.
-
-2. **Iterate through each number** in the list `numbers`.
-   For each number:
-
-   * Check if it already exists in the `seen` set.
-
-     * If it does, that means we have found a duplicate, so the function immediately returns `True`.
-   * If it doesn’t, add the number to the `seen` set and continue checking.
-
-3. **After the loop**, if no duplicates were found, the function returns `False`.
-
-This approach ensures that each number is checked only once, giving it a **time complexity of O(n)** and a **space complexity of O(n)** (since, in the worst case, all numbers are unique and stored in the set).
-
-### Example Runs
-
-* `contains_duplicate([1, 2, 3, 1])` → returns `True` because `1` appears twice.
-* `contains_duplicate([1, 2, 3, 4])` → returns `False` because all numbers are unique.
-"""
-
-html = markdown.markdown(md_text)
-print(html)
+for filename in os.listdir(folder_path):
+    if filename.endswith(".java") or filename.endswith(".py"):
+        base_name = os.path.splitext(filename)[0]
+        md_filename = f"{base_name}___info.md"
+        md_path = os.path.join(folder_path, md_filename)
+        content = f"""### Statement
+{base_name}
+### Solution
+tbd
+### Examples
+tbd"""
+        with open(md_path, "w") as f:
+            f.write(content)
+        print(f"Created: {md_filename}")
