@@ -43,3 +43,4 @@ gildedrose-refactoring-kata.iml
 .vscode
 
 generate_info_files.py
+generate_md_info_files.py
