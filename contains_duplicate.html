@@ -1,10 +1,4 @@
 <h3>Statement</h3>
-<p>Write a function that determines whether a list of integers contains any duplicates.<br />
-The function should return <code>True</code> if any value appears at least twice in the list and <code>False</code> if every element is distinct.</p>
+<p>Given an integer array <code>numbers</code>, return <code>true</code> if any value appears at least twice in the array, and return <code>false</code> if every element is distinct.</p>
 <h3>Solution</h3>
-<p>We can solve this problem efficiently using a <strong>set</strong>.<br />
-As we iterate through the list, we keep track of all numbers we've seen so far.<br />
-- If we encounter a number that’s already in the set, it means there’s a duplicate, so we return <code>True</code>.<br />
-- Otherwise, we add the number to the set and continue.<br />
-If the loop finishes without finding any duplicates, we return <code>False</code>.  </p>
-<p>This approach runs in <strong>O(n)</strong> time because each lookup and insertion in a set takes constant time on average.</p>
+<p>We iterate through the array while keeping track of the elements we have seen so far using a set. If we encounter an element that is already in the set, we return <code>true</code>. If we finish iterating through the array without finding any duplicates, we return <code>false</code>.</p>
