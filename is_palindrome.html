@@ -4,12 +4,3 @@
 <p>To solve this problem without converting the integer to a string or reversing the entire number, we can compare the <em>first half</em> of the number with the <em><strong>reversed</strong> second half</em>. If they are the same, then the number is a palindrome.</p>
 <p>For even-length numbers, that halves will be of equal length. For odd-length numbers, we have to ignore the middle digit that appears in the second half.</p>
 <p>An immediate check is to see if the number is negative or ends with a zero (but is not zero itself). In these cases, the number cannot be a palindrome.</p>
-<p>Examples:</p>
-<ul>
-<li>
-<p>x = 12321 -&gt; first_half = 12, second_half_reversed = 123 -&gt; ignore middle digit -&gt; second_half_reversed = 12 -&gt; palindrome</p>
-</li>
-<li>
-<p>x = 1221 -&gt; first_half = 12, second_half_reversed = 12 -&gt; palindrome</p>
-</li>
-</ul>
