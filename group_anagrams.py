@@ -1,5 +1,6 @@
 from collections import defaultdict
 
+
 def group_anagrams(words: list[str]) -> list[list[str]]:
     groups = defaultdict(list)
 
@@ -9,19 +10,18 @@ def group_anagrams(words: list[str]) -> list[list[str]]:
 
     return list(groups.values())
 
-def assert_equal_lists_ignore_order(l1:list[list[str]], l2:list[list[str]]) -> bool:
-    set1 = {tuple(sorted(l)) for l in l1}
-    set2 = {tuple(sorted(l)) for l in l2}
-    assert set1 == set2
+
+def equal_lists_of_lists(list1: list[list[str]], list2: list[list[str]]) -> bool:
+    set1 = {tuple(sorted(inner_list)) for inner_list in list1}
+    set2 = {tuple(sorted(inner_list)) for inner_list in list2}
+    return set1 == set2
 
 
-if __name__ == '__main__':
-    actual = group_anagrams(["eat","tea","tan","ate","nat","bat"])
-    print(actual)
-    # assert actual == [[[["bat"],["nat","tan"],["ate","eat","tea"]]
-    expected = [["bat"],["nat","tan"],["ate","eat","tea"]]
-    assert_equal_lists_ignore_order(expected, actual)
+if __name__ == "__main__":
+    expected = [["bat"], ["nat", "tan"], ["ate", "eat", "tea"]]
+    actual = group_anagrams(["eat", "tea", "tan", "ate", "nat", "bat"])
+    assert equal_lists_of_lists(expected, actual)
 
-    assert group_anagrams(['']) == [['']]
-    assert group_anagrams(['a']) == [['a']]
-
+    assert group_anagrams([""]) == [[""]]
+    assert group_anagrams(["a"]) == [["a"]]
+    assert group_anagrams(["ab", "ba"]) == [["ab", "ba"]]
