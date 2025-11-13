@@ -23,4 +23,4 @@ if __name__ == '__main__':
     assert is_valid('{}')
     assert is_valid('[]')
     assert is_valid('([{}])')
-    assert False == is_valid('({[})')
+    assert not is_valid('({[})')
