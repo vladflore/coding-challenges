@@ -29,6 +29,12 @@ def integer_to_roman(number: int) -> str:
 
 
 if __name__ == "__main__":
+    assert "III" == integer_to_roman(3)
     assert "MMMDCCXLIX" == integer_to_roman(3749)
     assert "LVIII" == integer_to_roman(58)
     assert "MCMXCIV" == integer_to_roman(1994)
+    assert "XLII" == integer_to_roman(42)
+    assert "MMXXV" == integer_to_roman(2025)
+    assert "" == integer_to_roman(0)
+    assert "" == integer_to_roman(-5)
+

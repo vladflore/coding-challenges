@@ -1,4 +1,6 @@
 <h3>Statement</h3>
-<p>best_time_to_buy_and_sell_stock</p>
+<p>Given an array <code>prices</code> where <code>prices[i]</code> is the price of a given stock on the <code>i</code>-th day, you want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock. Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return <code>0</code>.</p>
 <h3>Solution</h3>
-<p>tbd</p>
+<p>To solve this problem, we need to find the day to buy the stock at the lowest price and the day to sell it at the highest price <em>after</em> the buying day.</p>
+<p>Basically, we need to find the minimum price in the array and then find the maximum price that comes after this minimum price. The difference between these two prices will give us the maximum profit.</p>
+<p>We can achieve this by iterating through the list of prices while keeping track of the minimum price seen so far. When we encounter a price that is higher than the minimum price, we calculate the potential profit and update the maximum profit if this potential profit is greater than the current maximum profit.</p>
