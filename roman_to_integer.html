@@ -1,4 +1,7 @@
 <h3>Statement</h3>
-<p>roman_to_integer</p>
+<p>Given a roman numeral, convert it to an integer. The roman to integer mapping is as follows:</p>
+<p><code>python
+    roman_values = {"I": 1, "V": 5, "X": 10, "L": 50, "C": 100, "D": 500, "M": 1000}</code></p>
 <h3>Solution</h3>
-<p>tbd</p>
+<p>Converting a roman numeral to an integer involves iterating through the characters of the string and applying the rules of roman numeral representation. If a smaller numeral appears before a larger numeral, it is subtracted; otherwise, it is added.</p>
+<p>For the case when subtraction is needed, we can check if the current numeral is greater than the previous numeral. If it is, we subtract twice the value of the previous numeral (once to negate the addition we did earlier and once more to account for the subtraction).</p>

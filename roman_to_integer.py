@@ -17,6 +17,9 @@ def roman_to_integer(roman_string: str) -> int:
 
 
 if __name__ == "__main__":
-    print(f"III -> {roman_to_integer('III')}")
-    print(f"LVIII -> {roman_to_integer('LVIII')}")
-    print(f"MCMXCIV -> {roman_to_integer('MCMXCIV')}")
+    assert roman_to_integer('III') == 3
+    assert roman_to_integer('LVIII') == 58
+    assert roman_to_integer('MCMXCIV') == 1994
+    assert roman_to_integer("") == 0
+    assert roman_to_integer("XLII") == 42
+
