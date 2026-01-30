@@ -1,0 +1,10 @@
+<h3>Statement</h3>
+<p>Given an integer <code>n</code>, return the least number of perfect square numbers that sum to <code>n</code>.</p>
+<p>A perfect square is an integer that is the square of an integer; in other words, it is the product of some integer with itself.
+For example, <code>1</code>, <code>4</code>, <code>9</code>, and <code>16</code> are perfect squares while <code>3</code> and <code>11</code> are <strong>not</strong>.</p>
+<h3>Solution</h3>
+<p>The solution uses dynamic programming to find the minimum number of perfect squares that add up to <code>n</code>.
+An array <code>dp</code> is built where <code>dp[i]</code> stores the minimum number of squares needed to form <code>i</code>.
+For each number <code>i</code>, the algorithm tries all perfect squares smaller than or equal to <code>i</code>.
+It updates <code>dp[i]</code> by choosing the smallest value between its current value and <code>dp[i - square] + 1</code>.
+The final answer is stored in <code>dp[n]</code>.</p>
