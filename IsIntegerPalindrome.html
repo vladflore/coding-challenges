@@ -1,0 +1,6 @@
+<h3>Statement</h3>
+<p>Given an integer <code>number</code>, return true if <code>number</code> is a palindrome, and false otherwise. An integer is a palindrome when it reads the same backward as forward.</p>
+<h3>Solution</h3>
+<p>To solve this problem without converting the integer to a string or reversing the entire number, we can compare the <em>first half</em> of the number with the <em><strong>reversed</strong> second half</em>. If they are the same, then the number is a palindrome.</p>
+<p>For even-length numbers, that halves will be of equal length. For odd-length numbers, we have to ignore the middle digit that appears in the second half.</p>
+<p>An immediate check is to see if the number is negative or ends with a zero (but is not zero itself). In these cases, the number cannot be a palindrome.</p>
