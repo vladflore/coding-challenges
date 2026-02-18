@@ -1,0 +1,6 @@
+<h3>Statement</h3>
+<p>There are <code>n</code> kids with candies. You are given an integer array <code>candies</code>, where each <code>candies[i]</code> represents the number of candies the ith kid has, and an integer <code>extraCandies</code>, denoting the number of extra candies that you have.</p>
+<p>Return a boolean array <code>result</code> of length <code>n</code>, where <code>result[i]</code> is true if, after giving the ith kid all the <code>extraCandies</code>, they will have the greatest number of candies among all the kids, or false otherwise.</p>
+<p>Note that multiple kids can have the greatest number of candies.</p>
+<h3>Solution</h3>
+<p>The optimal approach to solve this problem is to first find the maximum number of candies that any kid currently has. Then, for each kid, we check if giving them all the <code>extraCandies</code> would make their total candies greater than or equal to this maximum. If it does, we set the corresponding entry in the result array to <code>true</code>; otherwise, we set it to <code>false</code>.</p>

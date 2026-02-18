@@ -1,0 +1,8 @@
+<h3>Statement</h3>
+<p>Given an integer <code>n</code>, return a string array <code>answer</code> (<strong>1</strong>-indexed) where:</p>
+<p><code>answer[i] == "FizzBuzz"</code> if i is divisible by 3 and 5.
+<code>answer[i] == "Fizz"</code> if i is divisible by 3.
+<code>answer[i] == "Buzz"</code> if i is divisible by 5.
+<code>answer[i] == i</code> (as a string) if none of the above conditions are true.</p>
+<h3>Solution</h3>
+<p>To solve this problem, we can iterate through the numbers from 1 to <code>n</code> and apply the given conditions to determine what string to add to our answer array. We can use a simple loop and conditional statements to check for divisibility by 3 and 5. If a number is divisible by 3 we will add "Fizz" to the answer, if it is divisible by 5 we will add "Buzz", and if it is not divisible by either, we will add the number itself as a string. We then store the string result for number <code>i</code> in the <code>answer</code> array at index <code>i-1</code> (since the array is 0-indexed).</p>

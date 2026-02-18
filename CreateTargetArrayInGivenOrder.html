@@ -1,0 +1,11 @@
+<h3>Statement</h3>
+<p>Given two arrays of integers <code>nums</code> and <code>index</code>. Your task is to create <em>target</em> array under the following rules:</p>
+<ul>
+<li>Initially <em>target</em> array is empty.</li>
+<li>From left to right read <code>nums[i]</code> and <code>index[i]</code>, insert at index <code>index[i]</code> the value <code>nums[i]</code> in target array.</li>
+<li>Repeat the previous step until there are no elements to read in <code>nums</code> and <code>index</code>.</li>
+</ul>
+<p>Return the <em>target</em> array.</p>
+<p>It is guaranteed that the insertion operations will be valid.</p>
+<h3>Solution</h3>
+<p>The key idea is to iterate through the <code>nums</code> and <code>index</code> arrays simultaneously, inserting each element from <code>nums</code> into the target array at the corresponding position specified by <code>index</code>. We can use a simple list to represent the target array and utilize the <code>add(index, value)</code> method to place elements at the correct positions.</p>
