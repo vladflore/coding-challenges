@@ -1,4 +1,4 @@
-public class MatchingParantheses {
+public class MatchingParentheses {
     public static void main(String[] args) {
         
     }
