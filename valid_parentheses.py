@@ -1,4 +1,4 @@
-def is_valid(string_of_parantheses: str) -> bool:
+def is_valid(string_of_parentheses: str) -> bool:
     stack = []
     map = {
         '(':')',
@@ -6,7 +6,7 @@ def is_valid(string_of_parantheses: str) -> bool:
         '[':']'
     }
 
-    for character in string_of_parantheses:
+    for character in string_of_parentheses:
         if character in map:
             stack.append(character)
         elif character in map.values():

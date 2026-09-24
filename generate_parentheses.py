@@ -1,8 +1,8 @@
-def generate_parantheses(number_of_pairs: int) -> list[str]:
+def generate_parentheses(number_of_pairs: int) -> list[str]:
     valid_combinations = []
 
     def build_combinations(
-        current_string, open_parantheses_needed, closed_parantheses_needed
+        current_string, open_parentheses_needed, closed_parentheses_needed
     ):
         print(current_string)
         
@@ -10,18 +10,18 @@ def generate_parantheses(number_of_pairs: int) -> list[str]:
             valid_combinations.append(current_string)
             return
 
-        if open_parantheses_needed > 0:
+        if open_parentheses_needed > 0:
             build_combinations(
                 current_string + "(",
-                open_parantheses_needed - 1,
-                closed_parantheses_needed,
+                open_parentheses_needed - 1,
+                closed_parentheses_needed,
             )
 
-        if closed_parantheses_needed > open_parantheses_needed:
+        if closed_parentheses_needed > open_parentheses_needed:
             build_combinations(
                 current_string + ")",
-                open_parantheses_needed,
-                closed_parantheses_needed - 1,
+                open_parentheses_needed,
+                closed_parentheses_needed - 1,
             )
 
     build_combinations("", number_of_pairs, number_of_pairs)
@@ -31,7 +31,7 @@ def generate_parantheses(number_of_pairs: int) -> list[str]:
 
 if __name__ == "__main__":
     # ["((()))","(()())","(())()","()(())","()()()"]
-    print(generate_parantheses(3))
+    print(generate_parentheses(3))
 
     # ["()"]
-    print(generate_parantheses(1))
+    print(generate_parentheses(1))
