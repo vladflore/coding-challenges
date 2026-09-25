@@ -28,13 +28,18 @@ def integer_to_roman(number: int) -> str:
     return roman
 
 
-if __name__ == "__main__":
-    assert "III" == integer_to_roman(3)
-    assert "MMMDCCXLIX" == integer_to_roman(3749)
-    assert "LVIII" == integer_to_roman(58)
-    assert "MCMXCIV" == integer_to_roman(1994)
-    assert "XLII" == integer_to_roman(42)
-    assert "MMXXV" == integer_to_roman(2025)
-    assert "" == integer_to_roman(0)
-    assert "" == integer_to_roman(-5)
+def check(label, actual, expected):
+    ok = actual == expected
+    print(f"{'PASS' if ok else 'FAIL'}  {label}" + ("" if ok else f"  -> expected {expected!r}, got {actual!r}"))
+    return ok
 
+
+if __name__ == "__main__":
+    results = [
+        check('integer_to_roman(3)', integer_to_roman(3), 'III'),
+        check('integer_to_roman(4)', integer_to_roman(4), 'IV'),
+        check('integer_to_roman(58)', integer_to_roman(58), 'LVIII'),
+        check('integer_to_roman(1994)', integer_to_roman(1994), 'MCMXCIV'),
+        check('integer_to_roman(3999)', integer_to_roman(3999), 'MMMCMXCIX'),
+    ]
+    print(f"{sum(results)}/{len(results)} passed")

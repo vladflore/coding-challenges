@@ -31,20 +31,24 @@ The result of the merge is [1,2,2,3,5,6] with the underlined elements coming fro
         merged_p -= 1
 
 
+def check(label, actual, expected):
+    ok = actual == expected
+    print(f"{'PASS' if ok else 'FAIL'}  {label}" + ("" if ok else f"  -> expected {expected!r}, got {actual!r}"))
+    return ok
 
-if __name__ == '__main__':
-    arr1 = [1,2,3,0,0,0]
-    merge_sorted_arrays(arr1,3,[2,5,6],3)
-    print(arr1)
 
-    arr1 = [1,2,3,0]
-    merge_sorted_arrays(arr1,3,[6],1)
-    print(arr1)
+def merged(arr1, arr1_len, arr2, arr2_len):
+    """The function works in place; return arr1 so it can be checked."""
+    merge_sorted_arrays(arr1, arr1_len, arr2, arr2_len)
+    return arr1
 
-    arr1 = [1,2,3,0,0,0]
-    merge_sorted_arrays(arr1,3,[6,7,8],3)
-    print(arr1)
 
-    arr1 = [6,7,8,0,0,0]
-    merge_sorted_arrays(arr1,3,[1,2,3],3)
-    print(arr1)
+if __name__ == "__main__":
+    results = [
+        check('merge_sorted_arrays([1, 2, 3, 0, 0, 0], 3, [2, 5, 6], 3)', merged([1, 2, 3, 0, 0, 0], 3, [2, 5, 6], 3), [1, 2, 2, 3, 5, 6]),
+        check('merge_sorted_arrays([1, 2, 3, 0], 3, [6], 1)', merged([1, 2, 3, 0], 3, [6], 1), [1, 2, 3, 6]),
+        check('merge_sorted_arrays([6, 7, 8, 0, 0, 0], 3, [1, 2, 3], 3)', merged([6, 7, 8, 0, 0, 0], 3, [1, 2, 3], 3), [1, 2, 3, 6, 7, 8]),
+        check('merge_sorted_arrays([0], 0, [1], 1)', merged([0], 0, [1], 1), [1]),
+        check('merge_sorted_arrays([1], 1, [], 0)', merged([1], 1, [], 0), [1]),
+    ]
+    print(f"{sum(results)}/{len(results)} passed")

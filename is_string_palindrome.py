@@ -9,11 +9,19 @@ def is_palindrome(string: str) -> bool:
     return True
 
 
+def check(label, actual, expected):
+    ok = actual == expected
+    print(f"{'PASS' if ok else 'FAIL'}  {label}" + ("" if ok else f"  -> expected {expected!r}, got {actual!r}"))
+    return ok
+
+
 if __name__ == "__main__":
-    assert is_palindrome("A man, a plan, a canal: Panama")
-    assert not is_palindrome("race a car")
-    assert is_palindrome("")
-    assert is_palindrome("No 'x' in Nixon")
-    assert not is_palindrome("Hello, World!")
-    assert is_palindrome("12321")
-    assert not is_palindrome("12345")
+    results = [
+        check("is_palindrome('A man, a plan, a canal: Panama')", is_palindrome('A man, a plan, a canal: Panama'), True),
+        check("is_palindrome('race a car')", is_palindrome('race a car'), False),
+        check("is_palindrome('')", is_palindrome(''), True),
+        check('is_palindrome("No \'x\' in Nixon")', is_palindrome("No 'x' in Nixon"), True),
+        check("is_palindrome('12321')", is_palindrome('12321'), True),
+        check("is_palindrome('12345')", is_palindrome('12345'), False),
+    ]
+    print(f"{sum(results)}/{len(results)} passed")

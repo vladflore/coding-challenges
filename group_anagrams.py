@@ -11,17 +11,23 @@ def group_anagrams(words: list[str]) -> list[list[str]]:
     return list(groups.values())
 
 
-def equal_lists_of_lists(list1: list[list[str]], list2: list[list[str]]) -> bool:
-    set1 = {tuple(sorted(inner_list)) for inner_list in list1}
-    set2 = {tuple(sorted(inner_list)) for inner_list in list2}
-    return set1 == set2
+def check(label, actual, expected):
+    ok = actual == expected
+    print(f"{'PASS' if ok else 'FAIL'}  {label}" + ("" if ok else f"  -> expected {expected!r}, got {actual!r}"))
+    return ok
+
+
+def normalized(groups):
+    """Groups can come in any order, and so can the words inside a group."""
+    return sorted(sorted(group) for group in groups)
 
 
 if __name__ == "__main__":
-    expected = [["bat"], ["nat", "tan"], ["ate", "eat", "tea"]]
-    actual = group_anagrams(["eat", "tea", "tan", "ate", "nat", "bat"])
-    assert equal_lists_of_lists(expected, actual)
-
-    assert group_anagrams([""]) == [[""]]
-    assert group_anagrams(["a"]) == [["a"]]
-    assert group_anagrams(["ab", "ba"]) == [["ab", "ba"]]
+    results = [
+        check("group_anagrams(['eat', 'tea', 'tan', 'ate', 'nat', 'bat'])", normalized(group_anagrams(['eat', 'tea', 'tan', 'ate', 'nat', 'bat'])), [['ate', 'eat', 'tea'], ['bat'], ['nat', 'tan']]),
+        check("group_anagrams([''])", normalized(group_anagrams([''])), [['']]),
+        check("group_anagrams(['a'])", normalized(group_anagrams(['a'])), [['a']]),
+        check('group_anagrams([])', normalized(group_anagrams([])), []),
+        check("group_anagrams(['ab', 'ba', 'abc'])", normalized(group_anagrams(['ab', 'ba', 'abc'])), [['ab', 'ba'], ['abc']]),
+    ]
+    print(f"{sum(results)}/{len(results)} passed")

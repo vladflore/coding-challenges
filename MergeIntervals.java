@@ -1,18 +1,34 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 
 public class MergeIntervals {
-  public static void main(String... args) {
 
-    var intervals = new int[][] {{1, 3}, {2, 6}, {8, 10}, {15, 18}};
-    System.out.println("merged %s is: %s".formatted(print(intervals), print(merge(intervals))));
+  public static void main(String[] args) {
+    check("merge([[1, 3], [2, 6], [8, 10], [15, 18]])", merge(new int[][] {{1, 3}, {2, 6}, {8, 10}, {15, 18}}), new int[][] {{1, 6}, {8, 10}, {15, 18}});
+    check("merge([[1, 4], [4, 5]])", merge(new int[][] {{1, 4}, {4, 5}}), new int[][] {{1, 5}});
+    check("merge([[5, 8], [3, 6], [1, 4]])", merge(new int[][] {{5, 8}, {3, 6}, {1, 4}}), new int[][] {{1, 8}});
+    check("merge([[1, 4], [2, 3]])", merge(new int[][] {{1, 4}, {2, 3}}), new int[][] {{1, 4}});
+    check("merge([[1, 4]])", merge(new int[][] {{1, 4}}), new int[][] {{1, 4}});
+    System.out.println(passed + "/" + total + " passed");
+  }
 
-    intervals = new int[][] {{1, 4}, {4, 5}};
-    System.out.println("merged %s is: %s".formatted(print(intervals), print(merge(intervals))));
+  private static int passed = 0, total = 0;
 
-    intervals = new int[][] {{5, 8}, {3, 6}, {1, 4}};
-    System.out.println("merged %s is: %s".formatted(print(intervals), print(merge(intervals))));
+  private static void check(String label, Object actual, Object expected) {
+    total++;
+    boolean ok = Objects.deepEquals(actual, expected);
+    if (ok) {
+      passed++;
+    }
+    System.out.println(
+        (ok ? "PASS  " : "FAIL  ") + label + (ok ? "" : "  -> expected " + show(expected) + ", got " + show(actual)));
+  }
+
+  private static String show(Object value) {
+    String text = Arrays.deepToString(new Object[] {value});
+    return text.substring(1, text.length() - 1);
   }
 
   private static int[][] merge(int[][] intervals) {
@@ -47,16 +63,4 @@ public class MergeIntervals {
     return merged.toArray(new int[merged.size()][]);
   }
 
-  private static String print(int[][] intervals) {
-    var sb = new StringBuilder();
-    sb.append("[");
-    for (int i = 0; i < intervals.length; i++) {
-      sb.append(Arrays.toString(intervals[i]));
-      if (i < intervals.length - 1) {
-        sb.append(", ");
-      }
-    }
-    sb.append("]");
-    return sb.toString();
-  }
 }

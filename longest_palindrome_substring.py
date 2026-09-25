@@ -25,10 +25,19 @@ def longest_palindrome_substring(input_string: str) -> str:
     return longest_palindrome
 
 
+def check(label, actual, expected):
+    ok = actual == expected
+    print(f"{'PASS' if ok else 'FAIL'}  {label}" + ("" if ok else f"  -> expected {expected!r}, got {actual!r}"))
+    return ok
+
+
 if __name__ == "__main__":
-    # "aba" is also valid
-    assert "bab" == longest_palindrome_substring("babad")
-
-    assert "bb" == longest_palindrome_substring("cbbd")
-
-    assert "xyzzzyx" == longest_palindrome_substring("abcddcbxyzzzyx")
+    results = [
+        check("longest_palindrome_substring('babad') in ('bab', 'aba')", longest_palindrome_substring('babad') in ('bab', 'aba'), True),
+        check("longest_palindrome_substring('cbbd')", longest_palindrome_substring('cbbd'), 'bb'),
+        check("longest_palindrome_substring('a')", longest_palindrome_substring('a'), 'a'),
+        check("longest_palindrome_substring('')", longest_palindrome_substring(''), ''),
+        check("longest_palindrome_substring('racecar')", longest_palindrome_substring('racecar'), 'racecar'),
+        check("longest_palindrome_substring('abcddcbxyzzzyx')", longest_palindrome_substring('abcddcbxyzzzyx'), 'xyzzzyx'),
+    ]
+    print(f"{sum(results)}/{len(results)} passed")

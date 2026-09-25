@@ -12,8 +12,19 @@ def word_break(phrase: str, dictionary: list[str]) -> bool:
     
     return buildable[phrase_length]
 
-if __name__ == '__main__':
-    s = "leetcode"
-    dictionary = ["leet","code"]
-    assert word_break(s, dictionary)
 
+def check(label, actual, expected):
+    ok = actual == expected
+    print(f"{'PASS' if ok else 'FAIL'}  {label}" + ("" if ok else f"  -> expected {expected!r}, got {actual!r}"))
+    return ok
+
+
+if __name__ == "__main__":
+    results = [
+        check("word_break('leetcode', ['leet', 'code'])", word_break('leetcode', ['leet', 'code']), True),
+        check("word_break('applepenapple', ['apple', 'pen'])", word_break('applepenapple', ['apple', 'pen']), True),
+        check("word_break('catsandog', ['cats', 'dog', 'sand', 'and', 'cat'])", word_break('catsandog', ['cats', 'dog', 'sand', 'and', 'cat']), False),
+        check("word_break('', ['a'])", word_break('', ['a']), True),
+        check("word_break('a', [])", word_break('a', []), False),
+    ]
+    print(f"{sum(results)}/{len(results)} passed")

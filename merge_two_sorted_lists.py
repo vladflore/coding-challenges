@@ -43,18 +43,40 @@ def print_list(head: ListNode) -> None:
         current = current.next
     print()
 
-if __name__ == '__main__':
-    list1 = ListNode(1)
-    list1.next = ListNode(2)
-    list1.next.next = ListNode(4)
 
-    list2 = ListNode(1)
-    list2.next = ListNode(3)
-    list2.next.next = ListNode(4)
+def check(label, actual, expected):
+    ok = actual == expected
+    print(f"{'PASS' if ok else 'FAIL'}  {label}" + ("" if ok else f"  -> expected {expected!r}, got {actual!r}"))
+    return ok
 
-    merged = merge(list1, list2)
 
-    print_list(list1)
-    print_list(list2)
-    print_list(merged)
+def from_list(values):
+    head = None
+    for value in reversed(values):
+        head = ListNode(value, head)
+    return head
 
+
+def to_list(head):
+    values = []
+    while head:
+        values.append(head.val)
+        head = head.next
+    return values
+
+
+def inputs_after_merge(values1, values2):
+    list1, list2 = from_list(values1), from_list(values2)
+    merge(list1, list2)
+    return to_list(list1), to_list(list2)
+
+
+if __name__ == "__main__":
+    results = [
+        check('merge([1, 2, 4], [1, 3, 4])', to_list(merge(from_list([1, 2, 4]), from_list([1, 3, 4]))), [1, 1, 2, 3, 4, 4]),
+        check('merge([], [])', to_list(merge(from_list([]), from_list([]))), []),
+        check('merge([], [0])', to_list(merge(from_list([]), from_list([0]))), [0]),
+        check('merge([5], [1, 2])', to_list(merge(from_list([5]), from_list([1, 2]))), [1, 2, 5]),
+        check('merge() leaves its inputs unchanged', inputs_after_merge([1, 3], [2]), ([1, 3], [2])),
+    ]
+    print(f"{sum(results)}/{len(results)} passed")

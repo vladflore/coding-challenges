@@ -28,7 +28,18 @@ def letter_combinations(digits):
 
     return result_combinations
 
-if __name__ == '__main__':
-    print(letter_combinations('23'))
-    print(letter_combinations(''))
-    print(letter_combinations('2'))
+
+def check(label, actual, expected):
+    ok = actual == expected
+    print(f"{'PASS' if ok else 'FAIL'}  {label}" + ("" if ok else f"  -> expected {expected!r}, got {actual!r}"))
+    return ok
+
+
+if __name__ == "__main__":
+    results = [
+        check("letter_combinations('23')", letter_combinations('23'), ['ad', 'ae', 'af', 'bd', 'be', 'bf', 'cd', 'ce', 'cf']),
+        check("letter_combinations('')", letter_combinations(''), []),
+        check("letter_combinations('2')", letter_combinations('2'), ['a', 'b', 'c']),
+        check("len(letter_combinations('79'))", len(letter_combinations('79')), 16),
+    ]
+    print(f"{sum(results)}/{len(results)} passed")

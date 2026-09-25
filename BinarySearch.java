@@ -1,30 +1,33 @@
-
 import java.util.Arrays;
+import java.util.Objects;
 
 public class BinarySearch {
 
     public static void main(String[] args) {
-        int[][] nums = new int[][]{
-            {-1, 0, 3, 5, 9, 12},
-            {-1, 0, 3, 5, 9, 12},
-            {},
-            {7},
-            {-1, 0, 3, 5, 9, 12},
-            {-1, 0, 3, 5, 9, 12}
-        };
-        int[] targets = new int[]{9, 2, -1, 7, 12, -1};
-        int[] expected_results = new int[]{4, -1, -1, 0, 5, 0};
+        check("binarySearch([-1, 0, 3, 5, 9, 12], 9)", binarySearch(new int[] {-1, 0, 3, 5, 9, 12}, 9), 4);
+        check("binarySearch([-1, 0, 3, 5, 9, 12], 2)", binarySearch(new int[] {-1, 0, 3, 5, 9, 12}, 2), -1);
+        check("binarySearch([], -1)", binarySearch(new int[] {}, -1), -1);
+        check("binarySearch([7], 7)", binarySearch(new int[] {7}, 7), 0);
+        check("binarySearch([-1, 0, 3, 5, 9, 12], 12)", binarySearch(new int[] {-1, 0, 3, 5, 9, 12}, 12), 5);
+        check("binarySearch([-1, 0, 3, 5, 9, 12], -1)", binarySearch(new int[] {-1, 0, 3, 5, 9, 12}, -1), 0);
+        System.out.println(passed + "/" + total + " passed");
+    }
 
-        for (int i = 0; i < nums.length; i++) {
-            int result = binarySearch(nums[i], targets[i]);
-            if (result != expected_results[i]) {
-                var message = """
-                Expected position: %d, got: %d
-                Searching for: %d, in array: %s""".formatted(expected_results[i], result, targets[i], Arrays.toString(nums[i]));
-                throw new RuntimeException(message);
-            }
+    private static int passed = 0, total = 0;
+
+    private static void check(String label, Object actual, Object expected) {
+        total++;
+        boolean ok = Objects.deepEquals(actual, expected);
+        if (ok) {
+            passed++;
         }
+        System.out.println(
+                (ok ? "PASS  " : "FAIL  ") + label + (ok ? "" : "  -> expected " + show(expected) + ", got " + show(actual)));
+    }
 
+    private static String show(Object value) {
+        String text = Arrays.deepToString(new Object[] {value});
+        return text.substring(1, text.length() - 1);
     }
 
     private static int binarySearch(int[] nums, int target) {

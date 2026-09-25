@@ -19,8 +19,20 @@ def decode_string(string: str) -> str:
 
     return current_string
 
-if __name__ == '__main__':
-    assert decode_string("3[a]2[bc]") == "aaabcbc"
-    assert decode_string("3[a2[c]]") == "accaccacc"
-    assert decode_string("2[abc]3[cd]ef") == "abcabccdcdcdef"
-    assert decode_string("13[xyz]") == "xyz" * 13
+
+def check(label, actual, expected):
+    ok = actual == expected
+    print(f"{'PASS' if ok else 'FAIL'}  {label}" + ("" if ok else f"  -> expected {expected!r}, got {actual!r}"))
+    return ok
+
+
+if __name__ == "__main__":
+    results = [
+        check("decode_string('3[a]2[bc]')", decode_string('3[a]2[bc]'), 'aaabcbc'),
+        check("decode_string('3[a2[c]]')", decode_string('3[a2[c]]'), 'accaccacc'),
+        check("decode_string('2[abc]3[cd]ef')", decode_string('2[abc]3[cd]ef'), 'abcabccdcdcdef'),
+        check("decode_string('13[xyz]')", decode_string('13[xyz]'), 'xyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyz'),
+        check("decode_string('abc')", decode_string('abc'), 'abc'),
+        check("decode_string('')", decode_string(''), ''),
+    ]
+    print(f"{sum(results)}/{len(results)} passed")

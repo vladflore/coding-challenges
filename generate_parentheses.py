@@ -27,9 +27,17 @@ def generate_parentheses(number_of_pairs: int) -> list[str]:
     return valid_combinations
 
 
-if __name__ == "__main__":
-    # ["((()))","(()())","(())()","()(())","()()()"]
-    print(generate_parentheses(3))
+def check(label, actual, expected):
+    ok = actual == expected
+    print(f"{'PASS' if ok else 'FAIL'}  {label}" + ("" if ok else f"  -> expected {expected!r}, got {actual!r}"))
+    return ok
 
-    # ["()"]
-    print(generate_parentheses(1))
+
+if __name__ == "__main__":
+    results = [
+        check('generate_parentheses(1)', sorted(generate_parentheses(1)), ['()']),
+        check('generate_parentheses(2)', sorted(generate_parentheses(2)), ['(())', '()()']),
+        check('generate_parentheses(3)', sorted(generate_parentheses(3)), sorted(['((()))', '(()())', '(())()', '()(())', '()()()'])),
+        check('len(generate_parentheses(4))', len(generate_parentheses(4)), 14),
+    ]
+    print(f"{sum(results)}/{len(results)} passed")

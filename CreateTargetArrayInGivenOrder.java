@@ -1,21 +1,30 @@
-
 import java.util.*;
 
 public class CreateTargetArrayInGivenOrder {
 
     public static void main(String[] args) {
+        check("solve([0, 1, 2, 3, 4], [0, 1, 2, 2, 1])", solve(new int[] {0, 1, 2, 3, 4}, new int[] {0, 1, 2, 2, 1}), new int[] {0, 4, 1, 3, 2});
+        check("solve([1, 2, 3, 4, 0], [0, 1, 2, 3, 0])", solve(new int[] {1, 2, 3, 4, 0}, new int[] {0, 1, 2, 3, 0}), new int[] {0, 1, 2, 3, 4});
+        check("solve([1], [0])", solve(new int[] {1}, new int[] {0}), new int[] {1});
+        check("solve([], [])", solve(new int[] {}, new int[] {}), new int[] {});
+        System.out.println(passed + "/" + total + " passed");
+    }
+
+    private static int passed = 0, total = 0;
+
+    private static void check(String label, Object actual, Object expected) {
+        total++;
+        boolean ok = Objects.deepEquals(actual, expected);
+        if (ok) {
+            passed++;
+        }
         System.out.println(
-                "Got %s, expected %s"
-                        .formatted(
-                                Arrays.toString(solve(new int[]{0, 1, 2, 3, 4}, new int[]{0, 1, 2, 2, 1})),
-                                Arrays.toString(new int[]{0, 4, 1, 3, 2})));
-        System.out.println(
-                "Got %s, expected %s"
-                        .formatted(
-                                Arrays.toString(solve(new int[]{1, 2, 3, 4, 0}, new int[]{0, 1, 2, 3, 0})),
-                                Arrays.toString(new int[]{0, 1, 2, 3, 4})));
-        System.out.println(
-                "Got %s, expected %s".formatted(Arrays.toString(solve(new int[]{1}, new int[]{0})), Arrays.toString(new int[]{1})));
+                (ok ? "PASS  " : "FAIL  ") + label + (ok ? "" : "  -> expected " + show(expected) + ", got " + show(actual)));
+    }
+
+    private static String show(Object value) {
+        String text = Arrays.deepToString(new Object[] {value});
+        return text.substring(1, text.length() - 1);
     }
 
     private static int[] solve(int[] nums, int[] indices) {

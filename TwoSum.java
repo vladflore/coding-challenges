@@ -1,20 +1,42 @@
-
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 public class TwoSum {
 
-    public static void main(String... args) {
-        test(new int[]{0, 1}, twoSum(new int[]{2, 7, 11, 15}, 9));
-        test(new int[]{1, 0}, twoSum(new int[]{2, 7, 11, 15}, 9));
-        test(new int[]{1, 2}, twoSum(new int[]{3, 2, 4}, 6));
-        test(new int[]{0, 1}, twoSum(new int[]{3, 4, 3}, 7));
-        test(new int[]{1, 2}, twoSum(new int[]{3, 3, 4}, 7));
-        test(new int[]{0, 1}, twoSum(new int[]{3, 3}, 6));
-        test(new int[]{1, 2}, twoSum(new int[]{-1, -2, -3}, -5));
-        test(new int[]{-1, -1}, twoSum(new int[]{0}, 0));
-        test(new int[]{0, 1}, twoSum(new int[]{0, 0}, 0));
+    public static void main(String[] args) {
+        check("twoSum([2, 7, 11, 15], 9)", sorted(twoSum(new int[] {2, 7, 11, 15}, 9)), new int[] {0, 1});
+        check("twoSum([3, 2, 4], 6)", sorted(twoSum(new int[] {3, 2, 4}, 6)), new int[] {1, 2});
+        check("twoSum([3, 4, 3], 7)", sorted(twoSum(new int[] {3, 4, 3}, 7)), new int[] {0, 1});
+        check("twoSum([3, 3], 6)", sorted(twoSum(new int[] {3, 3}, 6)), new int[] {0, 1});
+        check("twoSum([-1, -2, -3], -5)", sorted(twoSum(new int[] {-1, -2, -3}, -5)), new int[] {1, 2});
+        check("twoSum([0, 0], 0)", sorted(twoSum(new int[] {0, 0}, 0)), new int[] {0, 1});
+        check("twoSum([0], 0)", sorted(twoSum(new int[] {0}, 0)), new int[] {-1, -1});
+        System.out.println(passed + "/" + total + " passed");
+    }
+
+    private static int passed = 0, total = 0;
+
+    private static void check(String label, Object actual, Object expected) {
+        total++;
+        boolean ok = Objects.deepEquals(actual, expected);
+        if (ok) {
+            passed++;
+        }
+        System.out.println(
+                (ok ? "PASS  " : "FAIL  ") + label + (ok ? "" : "  -> expected " + show(expected) + ", got " + show(actual)));
+    }
+
+    private static String show(Object value) {
+        String text = Arrays.deepToString(new Object[] {value});
+        return text.substring(1, text.length() - 1);
+    }
+
+    private static int[] sorted(int[] values) {
+        int[] copy = values.clone();
+        Arrays.sort(copy);
+        return copy;
     }
 
     private static int[] twoSum(int[] nums, int target) {
@@ -31,21 +53,5 @@ public class TwoSum {
         return new int[]{-1, -1};
     }
 
-    private static void test(int[] expected, int[] actual) {
-        var copyExpected = Arrays.copyOf(expected, expected.length);
-        var copyActual = Arrays.copyOf(actual, actual.length);
-        Arrays.sort(copyExpected);
-        Arrays.sort(copyActual);
-        if (!Arrays.equals(copyExpected, copyActual)) {
-            throw new WrongAnswerException(
-                    "Expected %s, got %s".formatted(Arrays.toString(expected), Arrays.toString(actual)));
-        }
-    }
 }
 
-class WrongAnswerException extends RuntimeException {
-
-    public WrongAnswerException(String message) {
-        super(message);
-    }
-}

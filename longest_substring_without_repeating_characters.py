@@ -18,7 +18,19 @@ def length_of_longest_substr_wo_repeating_chars(string: str) -> int:
     return max_length
 
 
-if __name__ == '__main__':
-    assert 3 == length_of_longest_substr_wo_repeating_chars("abcabcbb")
-    assert 1 == length_of_longest_substr_wo_repeating_chars("bbbbb")
-    assert 3 == length_of_longest_substr_wo_repeating_chars("pwwkew")
+def check(label, actual, expected):
+    ok = actual == expected
+    print(f"{'PASS' if ok else 'FAIL'}  {label}" + ("" if ok else f"  -> expected {expected!r}, got {actual!r}"))
+    return ok
+
+
+if __name__ == "__main__":
+    results = [
+        check("length_of_longest_substr_wo_repeating_chars('abcabcbb')", length_of_longest_substr_wo_repeating_chars('abcabcbb'), 3),
+        check("length_of_longest_substr_wo_repeating_chars('bbbbb')", length_of_longest_substr_wo_repeating_chars('bbbbb'), 1),
+        check("length_of_longest_substr_wo_repeating_chars('pwwkew')", length_of_longest_substr_wo_repeating_chars('pwwkew'), 3),
+        check("length_of_longest_substr_wo_repeating_chars('')", length_of_longest_substr_wo_repeating_chars(''), 0),
+        check("length_of_longest_substr_wo_repeating_chars('au')", length_of_longest_substr_wo_repeating_chars('au'), 2),
+        check("length_of_longest_substr_wo_repeating_chars('dvdf')", length_of_longest_substr_wo_repeating_chars('dvdf'), 3),
+    ]
+    print(f"{sum(results)}/{len(results)} passed")

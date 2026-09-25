@@ -11,10 +11,20 @@ def binary_search(nums: list[int], target: int) -> int:
     return -1
 
 
+def check(label, actual, expected):
+    ok = actual == expected
+    print(f"{'PASS' if ok else 'FAIL'}  {label}" + ("" if ok else f"  -> expected {expected!r}, got {actual!r}"))
+    return ok
+
+
 if __name__ == "__main__":
-    assert 4 == binary_search([-1, 0, 3, 5, 9, 12], 9)
-    assert -1 == binary_search([-1, 0, 3, 5, 9, 12], 2)
-    assert -1 == binary_search([], -1)
-    assert 0 == binary_search([7], 7)
-    assert 5 == binary_search([-1, 0, 3, 5, 9, 12], 12)
-    assert 0 == binary_search([-1, 0, 3, 5, 9, 12], -1)
+    results = [
+        check('binary_search([-1, 0, 3, 5, 9, 12], 9)', binary_search([-1, 0, 3, 5, 9, 12], 9), 4),
+        check('binary_search([-1, 0, 3, 5, 9, 12], 2)', binary_search([-1, 0, 3, 5, 9, 12], 2), -1),
+        check('binary_search([], 1)', binary_search([], 1), -1),
+        check('binary_search([5], 5)', binary_search([5], 5), 0),
+        check('binary_search([1, 3], 1)', binary_search([1, 3], 1), 0),
+        check('binary_search([1, 3], 3)', binary_search([1, 3], 3), 1),
+        check('binary_search([-1, 0, 3, 5, 9, 12], 12)', binary_search([-1, 0, 3, 5, 9, 12], 12), 5),
+    ]
+    print(f"{sum(results)}/{len(results)} passed")

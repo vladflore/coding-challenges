@@ -27,18 +27,32 @@ def display(head: ListNode) -> None:
     print()
 
 
-if __name__ == '__main__':
-    head = ListNode(1)
-    head.next = ListNode(2)
-    head.next.next = ListNode(3)
-    display(head)
-    display(reverse_linked_list(head))
-    
-    head = ListNode(1)
-    head.next = ListNode(2)
-    display(head)
-    display(reverse_linked_list(head))
+def check(label, actual, expected):
+    ok = actual == expected
+    print(f"{'PASS' if ok else 'FAIL'}  {label}" + ("" if ok else f"  -> expected {expected!r}, got {actual!r}"))
+    return ok
 
-    head = ListNode(1)
-    display(head)
-    display(reverse_linked_list(head))
+
+def from_list(values):
+    head = None
+    for value in reversed(values):
+        head = ListNode(value, head)
+    return head
+
+
+def to_list(head):
+    values = []
+    while head:
+        values.append(head.val)
+        head = head.next
+    return values
+
+
+if __name__ == "__main__":
+    results = [
+        check('reverse_linked_list([1, 2, 3])', to_list(reverse_linked_list(from_list([1, 2, 3]))), [3, 2, 1]),
+        check('reverse_linked_list([1, 2])', to_list(reverse_linked_list(from_list([1, 2]))), [2, 1]),
+        check('reverse_linked_list([1])', to_list(reverse_linked_list(from_list([1]))), [1]),
+        check('reverse_linked_list([])', to_list(reverse_linked_list(from_list([]))), []),
+    ]
+    print(f"{sum(results)}/{len(results)} passed")

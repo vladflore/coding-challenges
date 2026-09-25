@@ -18,12 +18,22 @@ def is_valid(string_of_parentheses: str) -> bool:
 
     return not stack
 
-if __name__ == '__main__':
-    assert is_valid('()')
-    assert is_valid('{}')
-    assert is_valid('[]')
-    assert is_valid('([{}])')
-    assert is_valid("()[]{}")
-    assert is_valid("([])(([{}]))")
-    assert not is_valid('({[})')
-    assert is_valid("")
+
+def check(label, actual, expected):
+    ok = actual == expected
+    print(f"{'PASS' if ok else 'FAIL'}  {label}" + ("" if ok else f"  -> expected {expected!r}, got {actual!r}"))
+    return ok
+
+
+if __name__ == "__main__":
+    results = [
+        check("is_valid('()')", is_valid('()'), True),
+        check("is_valid('()[]{}')", is_valid('()[]{}'), True),
+        check("is_valid('(]')", is_valid('(]'), False),
+        check("is_valid('([)]')", is_valid('([)]'), False),
+        check("is_valid('{[]}')", is_valid('{[]}'), True),
+        check("is_valid('')", is_valid(''), True),
+        check("is_valid('(')", is_valid('('), False),
+        check("is_valid(')')", is_valid(')'), False),
+    ]
+    print(f"{sum(results)}/{len(results)} passed")

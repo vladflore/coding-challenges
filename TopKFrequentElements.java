@@ -1,50 +1,40 @@
-
 import java.util.*;
 
 public class TopKFrequentElements {
 
     public static void main(String[] args) {
-        var nums = new int[]{1, 1, 1, 2, 2, 3};
-        int k = 2;
-        var expected = new int[]{1, 2};
-        System.out.println(
-                "nums=%s, k=%d, expected=%s, got=%s, got=%s"
-                        .formatted(
-                                Arrays.toString(nums),
-                                k,
-                                Arrays.toString(expected),
-                                Arrays.toString(solve(nums, k)),
-                                Arrays.toString(solveWithMinHeap(nums, k))
-                        )
-        );
+        check("solve([1, 1, 1, 2, 2, 3], 2)", sorted(solve(new int[] {1, 1, 1, 2, 2, 3}, 2)), new int[] {1, 2});
+        check("solve([1], 1)", sorted(solve(new int[] {1}, 1)), new int[] {1});
+        check("solve([1, 2, 1, 2, 1, 2, 3, 1, 3, 2], 2)", sorted(solve(new int[] {1, 2, 1, 2, 1, 2, 3, 1, 3, 2}, 2)), new int[] {1, 2});
+        check("solve([4, 4, 5, 5, 5, 6], 1)", sorted(solve(new int[] {4, 4, 5, 5, 5, 6}, 1)), new int[] {5});
+        check("solveWithMinHeap([1, 1, 1, 2, 2, 3], 2)", sorted(solveWithMinHeap(new int[] {1, 1, 1, 2, 2, 3}, 2)), new int[] {1, 2});
+        check("solveWithMinHeap([1], 1)", sorted(solveWithMinHeap(new int[] {1}, 1)), new int[] {1});
+        check("solveWithMinHeap([1, 2, 1, 2, 1, 2, 3, 1, 3, 2], 2)", sorted(solveWithMinHeap(new int[] {1, 2, 1, 2, 1, 2, 3, 1, 3, 2}, 2)), new int[] {1, 2});
+        check("solveWithMinHeap([4, 4, 5, 5, 5, 6], 1)", sorted(solveWithMinHeap(new int[] {4, 4, 5, 5, 5, 6}, 1)), new int[] {5});
+        System.out.println(passed + "/" + total + " passed");
+    }
 
-        nums = new int[]{1};
-        k = 1;
-        expected = new int[]{1};
-        System.out.println(
-                "nums=%s, k=%d, expected=%s, got=%s, got=%s"
-                        .formatted(
-                                Arrays.toString(nums),
-                                k,
-                                Arrays.toString(expected),
-                                Arrays.toString(solve(nums, k)),
-                                Arrays.toString(solveWithMinHeap(nums, k))
-                        )
-        );
+    private static int passed = 0, total = 0;
 
-        nums = new int[]{1, 2, 1, 2, 1, 2, 3, 1, 3, 2};
-        k = 2;
-        expected = new int[]{1, 2};
+    private static void check(String label, Object actual, Object expected) {
+        total++;
+        boolean ok = Objects.deepEquals(actual, expected);
+        if (ok) {
+            passed++;
+        }
         System.out.println(
-                "nums=%s, k=%d, expected=%s, got=%s, got=%s"
-                        .formatted(
-                                Arrays.toString(nums),
-                                k,
-                                Arrays.toString(expected),
-                                Arrays.toString(solve(nums, k)),
-                                Arrays.toString(solveWithMinHeap(nums, k))
-                        )
-        );
+                (ok ? "PASS  " : "FAIL  ") + label + (ok ? "" : "  -> expected " + show(expected) + ", got " + show(actual)));
+    }
+
+    private static String show(Object value) {
+        String text = Arrays.deepToString(new Object[] {value});
+        return text.substring(1, text.length() - 1);
+    }
+
+    private static int[] sorted(int[] values) {
+        int[] copy = values.clone();
+        Arrays.sort(copy);
+        return copy;
     }
 
     private static int[] solve(int[] nums, int k) {

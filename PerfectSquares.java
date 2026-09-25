@@ -1,10 +1,33 @@
+import java.util.Arrays;
+import java.util.Objects;
+
 public class PerfectSquares {
+
   public static void main(String[] args) {
-    test(3, perfectSquares(12));
-    test(2, perfectSquares(13));
-    test(0, perfectSquares(0));
-    test(1, perfectSquares(1));
-    test(1, perfectSquares(4));
+    check("perfectSquares(12)", perfectSquares(12), 3);
+    check("perfectSquares(13)", perfectSquares(13), 2);
+    check("perfectSquares(0)", perfectSquares(0), 0);
+    check("perfectSquares(1)", perfectSquares(1), 1);
+    check("perfectSquares(4)", perfectSquares(4), 1);
+    check("perfectSquares(7)", perfectSquares(7), 4);
+    System.out.println(passed + "/" + total + " passed");
+  }
+
+  private static int passed = 0, total = 0;
+
+  private static void check(String label, Object actual, Object expected) {
+    total++;
+    boolean ok = Objects.deepEquals(actual, expected);
+    if (ok) {
+      passed++;
+    }
+    System.out.println(
+        (ok ? "PASS  " : "FAIL  ") + label + (ok ? "" : "  -> expected " + show(expected) + ", got " + show(actual)));
+  }
+
+  private static String show(Object value) {
+    String text = Arrays.deepToString(new Object[] {value});
+    return text.substring(1, text.length() - 1);
   }
 
   private static int perfectSquares(int n) {
@@ -20,15 +43,5 @@ public class PerfectSquares {
     return dp[n];
   }
 
-  private static void test(int expected, int actual) {
-    if (expected != actual) {
-      throw new WrongAnswerException("Expected %d, got %d".formatted(expected, actual));
-    }
-  }
 }
 
-class WrongAnswerException extends RuntimeException {
-  public WrongAnswerException(String message) {
-    super(message);
-  }
-}

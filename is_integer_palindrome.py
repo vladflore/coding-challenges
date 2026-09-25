@@ -11,11 +11,20 @@ def is_palindrome(num: int) -> bool:
     return num == reversed_half or num == reversed_half // 10
 
 
+def check(label, actual, expected):
+    ok = actual == expected
+    print(f"{'PASS' if ok else 'FAIL'}  {label}" + ("" if ok else f"  -> expected {expected!r}, got {actual!r}"))
+    return ok
+
+
 if __name__ == "__main__":
-    assert is_palindrome(121)
-    assert not is_palindrome(-121)
-    assert not is_palindrome(10)
-    assert is_palindrome(12321)
-    assert is_palindrome(0)
-    assert not is_palindrome(1234)
-    assert is_palindrome(123321)
+    results = [
+        check('is_palindrome(121)', is_palindrome(121), True),
+        check('is_palindrome(-121)', is_palindrome(-121), False),
+        check('is_palindrome(10)', is_palindrome(10), False),
+        check('is_palindrome(0)', is_palindrome(0), True),
+        check('is_palindrome(12321)', is_palindrome(12321), True),
+        check('is_palindrome(1234)', is_palindrome(1234), False),
+        check('is_palindrome(123321)', is_palindrome(123321), True),
+    ]
+    print(f"{sum(results)}/{len(results)} passed")

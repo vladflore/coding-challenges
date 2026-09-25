@@ -21,23 +21,23 @@ def are_anagrams2(word1: str, word2: str) -> bool:
     return Counter(word1) == Counter(word2)
 
 
+def check(label, actual, expected):
+    ok = actual == expected
+    print(f"{'PASS' if ok else 'FAIL'}  {label}" + ("" if ok else f"  -> expected {expected!r}, got {actual!r}"))
+    return ok
+
+
 if __name__ == "__main__":
-    s, t = "anagram", "nagaram"
-    print(f"{s} - {t} - {are_anagrams(s, t)}")
-    print(f"{s} - {t} - {are_anagrams2(s, t)}")
-
-    s, t = "rat", "car"
-    print(f"{s} - {t} - {are_anagrams(s, t)}")
-    print(f"{s} - {t} - {are_anagrams2(s, t)}")
-
-    s, t = "", ""
-    print(f"{s} - {t} - {are_anagrams(s, t)}")
-    print(f"{s} - {t} - {are_anagrams2(s, t)}")
-
-    s, t = "abc", "ab"
-    print(f"{s} - {t} - {are_anagrams(s, t)}")
-    print(f"{s} - {t} - {are_anagrams2(s, t)}")
-
-    s, t = "abba", "abba"
-    print(f"{s} - {t} - {are_anagrams(s, t)}")
-    print(f"{s} - {t} - {are_anagrams2(s, t)}")
+    results = [
+        check("are_anagrams('anagram', 'nagaram')", are_anagrams('anagram', 'nagaram'), True),
+        check("are_anagrams('rat', 'car')", are_anagrams('rat', 'car'), False),
+        check("are_anagrams('', '')", are_anagrams('', ''), True),
+        check("are_anagrams('a', 'ab')", are_anagrams('a', 'ab'), False),
+        check("are_anagrams('aab', 'abb')", are_anagrams('aab', 'abb'), False),
+        check("are_anagrams2('anagram', 'nagaram')", are_anagrams2('anagram', 'nagaram'), True),
+        check("are_anagrams2('rat', 'car')", are_anagrams2('rat', 'car'), False),
+        check("are_anagrams2('', '')", are_anagrams2('', ''), True),
+        check("are_anagrams2('a', 'ab')", are_anagrams2('a', 'ab'), False),
+        check("are_anagrams2('aab', 'abb')", are_anagrams2('aab', 'abb'), False),
+    ]
+    print(f"{sum(results)}/{len(results)} passed")
