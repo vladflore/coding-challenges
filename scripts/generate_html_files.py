@@ -28,7 +28,7 @@ if md_file:
 
     with open(md_path, "r") as f:
         md_content = f.read()
-        html = markdown.markdown(md_content)
+        html = markdown.markdown(md_content, extensions=["fenced_code"])
 
     with open(html_filename := generate_html_file_path(md_file), "w") as f:
         f.write(html)
@@ -40,7 +40,7 @@ else:
 
             with open(md_path, "r") as f:
                 md_content = f.read()
-                html = markdown.markdown(md_content)
+                html = markdown.markdown(md_content, extensions=["fenced_code"])
 
             with open(html_filename := generate_html_file_path(filename), "w") as f:
                 f.write(html)

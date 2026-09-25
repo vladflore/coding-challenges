@@ -4,8 +4,6 @@ def generate_parentheses(number_of_pairs: int) -> list[str]:
     def build_combinations(
         current_string, open_parentheses_needed, closed_parentheses_needed
     ):
-        print(current_string)
-        
         if len(current_string) == 2 * number_of_pairs:
             valid_combinations.append(current_string)
             return

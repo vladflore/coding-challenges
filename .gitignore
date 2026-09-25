@@ -42,5 +42,3 @@ gildedrose-refactoring-kata.iml
 *.iml
 .vscode
 
-*.md
-!README.md

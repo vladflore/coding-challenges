@@ -1,4 +1,6 @@
 <h3>Statement</h3>
-<p>longest_palindrome_substring</p>
+<p>Given a string, return the longest substring that is a palindrome. If there are several of the same length, any of them is accepted.</p>
+<p>Example: <code>"babad"</code> gives <code>"bab"</code> (or <code>"aba"</code>), and <code>"cbbd"</code> gives <code>"bb"</code>.</p>
 <h3>Solution</h3>
-<p>tbd</p>
+<p>Every palindrome is symmetric around its center, which is either a single character (odd length) or the gap between two characters (even length). For each of the <code>2n - 1</code> possible centers we expand outwards while the characters on both sides are equal, and remember the longest palindrome found so far.</p>
+<p>Each expansion takes up to O(n), so the time complexity is O(n²); apart from the result, extra space is O(1).</p>

@@ -1,4 +1,6 @@
 <h3>Statement</h3>
-<p>remove_duplicates_from_sorted_array</p>
+<p>Given an integer array sorted in non-decreasing order, remove the duplicates in place so that each unique element appears only once, keeping their order. Return the number of unique elements <code>k</code>; the first <code>k</code> positions of the array must hold them.</p>
+<p>Example: <code>[0, 0, 1, 1, 1, 2, 2, 3, 3, 4]</code> gives <code>5</code>, with the array starting <code>[0, 1, 2, 3, 4, ...]</code>.</p>
 <h3>Solution</h3>
-<p>tbd</p>
+<p>Because the array is sorted, duplicates are next to each other. A write pointer <code>position</code> marks where the next unique value goes; the first element is always kept. We scan the rest of the array, and whenever an element differs from the last value written (<code>numbers[position - 1]</code>), we write it at <code>position</code> and advance the pointer. At the end, <code>position</code> is the number of unique elements.</p>
+<p>Time complexity is O(n) and extra space is O(1).</p>

@@ -1,4 +1,4 @@
 <h3>Statement</h3>
 <p>Given the array of integers <code>nums</code>, you will choose two different indices <code>i</code> and <code>j</code> of that array. Return the maximum value of <code>(nums[i]-1) * (nums[j]-1)</code>.</p>
 <h3>Solution</h3>
-<p>To solve the problem we find the two largest numbers in the array and then calculate the product of those two numbers minus one.</p>
+<p>Since all numbers are at least 1, the product <code>(a - 1) * (b - 1)</code> is largest for the two largest numbers <code>a</code> and <code>b</code>. We find them in a single pass, keeping track of the largest and second largest value seen so far, and return <code>(largest - 1) * (secondLargest - 1)</code>. No sorting is needed, so this is O(n) time and O(1) space.</p>

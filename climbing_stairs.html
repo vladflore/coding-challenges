@@ -1,4 +1,6 @@
 <h3>Statement</h3>
-<p>climbing_stairs</p>
+<p>You are climbing a staircase with <code>number_of_stairs</code> steps. Each time you can climb either 1 or 2 steps. In how many distinct ways can you reach the top?</p>
+<p>Example: <code>3</code> stairs give <code>3</code> ways: 1+1+1, 1+2 and 2+1.</p>
 <h3>Solution</h3>
-<p>tbd</p>
+<p>To reach step <code>i</code>, the last move came either from step <code>i - 1</code> (a single step) or from step <code>i - 2</code> (a double step), so <code>ways(i) = ways(i - 1) + ways(i - 2)</code>: the Fibonacci recurrence. With <code>ways(1) = 1</code> and <code>ways(2) = 2</code> as the base cases, we build the answer bottom-up. Only the last two values are needed at any time, so we keep just two variables instead of a whole table.</p>
+<p>Time complexity is O(n) and extra space is O(1).</p>

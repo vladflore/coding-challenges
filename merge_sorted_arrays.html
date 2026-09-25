@@ -1,4 +1,6 @@
 <h3>Statement</h3>
-<p>merge_sorted_arrays</p>
+<p>You are given two integer arrays <code>nums1</code> and <code>nums2</code>, sorted in non-decreasing order, and two integers <code>m</code> and <code>n</code>, the number of elements in each. Merge <code>nums2</code> into <code>nums1</code> as one sorted array, in place. <code>nums1</code> has length <code>m + n</code>: its first <code>m</code> elements are the ones to merge and the last <code>n</code> are zeros reserved for the result.</p>
+<p>Example: <code>nums1 = [1, 2, 3, 0, 0, 0]</code>, <code>m = 3</code>, <code>nums2 = [2, 5, 6]</code>, <code>n = 3</code> gives <code>[1, 2, 2, 3, 5, 6]</code>.</p>
 <h3>Solution</h3>
-<p>tbd</p>
+<p>We fill <code>nums1</code> from the back, where the free space is, so no element is overwritten before it has been used. Three pointers point at the last real element of <code>nums1</code>, the last element of <code>nums2</code>, and the last position of the result. At each step the larger of the two current elements goes to the result position and its pointer moves left. When <code>nums2</code> runs out, the remaining elements of <code>nums1</code> are already in place; if <code>nums1</code> runs out first, the rest of <code>nums2</code> is copied over.</p>
+<p>Time complexity is O(m + n) and extra space is O(1).</p>

@@ -7,6 +7,8 @@ for filename in os.listdir(folder_path):
         base_name = os.path.splitext(filename)[0]
         md_filename = f"{base_name}.md"
         md_path = os.path.join(folder_path, md_filename)
+        if os.path.exists(md_path):
+            continue  # never overwrite a written statement/solution
         content = f"""### Statement
 {base_name}
 ### Solution

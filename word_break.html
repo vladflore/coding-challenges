@@ -1,4 +1,6 @@
 <h3>Statement</h3>
-<p>word_break</p>
+<p>Given a string <code>phrase</code> and a list of words <code>dictionary</code>, return <code>true</code> if <code>phrase</code> can be split into a sequence of one or more dictionary words. The same word may be used several times.</p>
+<p>Example: <code>"leetcode"</code> with <code>["leet", "code"]</code> gives <code>true</code>.</p>
 <h3>Solution</h3>
-<p>tbd</p>
+<p>We use dynamic programming: <code>buildable[i]</code> says whether the first <code>i</code> characters can be built from dictionary words, with <code>buildable[0] = true</code> for the empty prefix. For each end position <code>i</code> we look for a split point <code>j</code> such that the prefix up to <code>j</code> is buildable and the piece <code>phrase[j:i]</code> is a dictionary word; if one exists, <code>buildable[i]</code> is true. The answer is <code>buildable[n]</code>. The dictionary is turned into a set for O(1) lookups.</p>
+<p>There are O(n²) pairs <code>(j, i)</code>, and each slice costs up to O(n), so the time complexity is O(n³) in the worst case; the table takes O(n) space.</p>

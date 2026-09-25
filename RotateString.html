@@ -1,2 +1,6 @@
 <h3>Statement</h3>
+<p>Given two strings <code>s</code> and <code>goal</code>, return <code>true</code> if <code>s</code> can become <code>goal</code> after some number of shifts, where a shift moves the leftmost character of <code>s</code> to the rightmost position.</p>
+<p>Example: <code>s = "abcde"</code>, <code>goal = "cdeab"</code> gives <code>true</code>; <code>goal = "abced"</code> gives <code>false</code>.</p>
 <h3>Solution</h3>
+<p>Every rotation of <code>s</code> appears as a substring of <code>s + s</code>: for <code>"abcde"</code>, the string <code>"abcdeabcde"</code> contains <code>"bcdea"</code>, <code>"cdeab"</code> and so on. So after checking that both strings have the same length (otherwise no rotation can match), it is enough to check whether <code>s + s</code> contains <code>goal</code>.</p>
+<p>The concatenation and the substring search take O(n) extra space and, in the worst case, O(n²) time with a simple search.</p>

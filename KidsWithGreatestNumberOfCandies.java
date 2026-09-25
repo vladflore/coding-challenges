@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class KidsWithGreatesNumberOfCandies {
+public class KidsWithGreatestNumberOfCandies {
   public static void main(String[] args) {
 
     var result = solve(new int[] {2, 3, 5, 1, 3}, 3);

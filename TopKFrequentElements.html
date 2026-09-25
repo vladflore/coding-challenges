@@ -1,2 +1,7 @@
 <h3>Statement</h3>
+<p>Given an integer array <code>nums</code> and an integer <code>k</code>, return the <code>k</code> most frequent elements. You may return the answer in any order.</p>
+<p>Example: <code>nums = [1, 1, 1, 2, 2, 3]</code>, <code>k = 2</code> gives <code>[1, 2]</code>.</p>
 <h3>Solution</h3>
+<p>Both approaches start by counting how often each number occurs with a hash map.</p>
+<p>The bucket-sort approach creates an array of lists indexed by frequency (a number can occur at most <code>n</code> times, so <code>n + 1</code> buckets suffice) and puts every number into the bucket of its frequency. Walking the buckets from the highest frequency down and collecting numbers until we have <code>k</code> gives the answer in O(n) time.</p>
+<p>The heap approach keeps a min-heap ordered by frequency with at most <code>k</code> numbers, dropping the least frequent one whenever it grows beyond <code>k</code>. That takes O(n log k) time. Both use O(n) extra space for the counts.</p>

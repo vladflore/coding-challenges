@@ -1,4 +1,6 @@
 <h3>Statement</h3>
-<p>decode_string</p>
+<p>Given an encoded string, return its decoded form. The encoding rule is <code>k[encoded_string]</code>: the part inside the square brackets is repeated exactly <code>k</code> times. Encodings can be nested, and <code>k</code> can have several digits.</p>
+<p>Example: <code>"3[a]2[bc]"</code> gives <code>"aaabcbc"</code>, and <code>"3[a2[c]]"</code> gives <code>"accaccacc"</code>.</p>
 <h3>Solution</h3>
-<p>tbd</p>
+<p>We scan the string once and use a stack to handle nesting. Digits build up the current repeat count. On <code>[</code> we push the pair (count, string built so far) onto the stack and start a fresh string for the bracket's content. On <code>]</code> we pop that pair and set the current string to the previous string followed by the bracket's content repeated count times. Any other character is appended to the current string.</p>
+<p>The running time is proportional to the length of the decoded output, and the stack depth equals the nesting depth.</p>

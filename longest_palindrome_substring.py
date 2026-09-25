@@ -2,7 +2,7 @@ def longest_palindrome_substring(input_string: str) -> str:
     longest_palindrome = ""
     input_string_length = len(input_string)
 
-    def is_palindrome(left: int, right: int) -> str:
+    def expand_around_center(left: int, right: int) -> None:
         nonlocal longest_palindrome
         while (
             left >= 0
@@ -14,14 +14,13 @@ def longest_palindrome_substring(input_string: str) -> str:
                 longest_palindrome = current_palindrome
             left -= 1
             right += 1
-        return longest_palindrome
 
     for i in range(input_string_length):
         # check for odd length palindromes
-        is_palindrome(i, i)
+        expand_around_center(i, i)
 
         # check for even length palindromes
-        is_palindrome(i, i + 1)
+        expand_around_center(i, i + 1)
 
     return longest_palindrome
 

@@ -1,0 +1,25 @@
+### Statement
+
+Given an integer number, convert it to a Roman numeral. The mapping of integer values to Roman numerals is as follows:
+
+```python
+    integer_to_roman = {
+        1: "I",
+        4: "IV",
+        5: "V",
+        9: "IX",
+        10: "X",
+        40: "XL",
+        50: "L",
+        90: "XC",
+        100: "C",
+        400: "CD",
+        500: "D",
+        900: "CM",
+        1000: "M",
+    }
+```
+
+### Solution
+
+To solve this problem we can use a _greedy_ algorithm approach. We will start from the largest integer value in the mapping and work our way down to the smallest, appending the corresponding Roman numeral to the result string as many times as possible until the number to be converted gets smaller than the current integer value, at which point we move to the next smaller integer value.

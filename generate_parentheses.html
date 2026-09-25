@@ -1,4 +1,6 @@
 <h3>Statement</h3>
-<p>generate_parentheses</p>
+<p>Given <code>number_of_pairs</code> pairs of parentheses, generate all combinations of well-formed parentheses.</p>
+<p>Example: <code>3</code> gives <code>["((()))", "(()())", "(())()", "()(())", "()()()"]</code>.</p>
 <h3>Solution</h3>
-<p>tbd</p>
+<p>We build the strings with backtracking, one character at a time, keeping track of how many opening and closing parentheses are still available. An opening parenthesis can be added while some are left. A closing one can be added only if more closing than opening parentheses remain, which means there is an unmatched opening parenthesis to close. This way we never create an invalid prefix, and every string that reaches length <code>2 * n</code> is valid and gets collected.</p>
+<p>The number of results is the n-th Catalan number, and the work is proportional to the number of results times their length.</p>

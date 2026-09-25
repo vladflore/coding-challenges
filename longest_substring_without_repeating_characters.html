@@ -1,4 +1,6 @@
 <h3>Statement</h3>
-<p>longest_substring_without_repeating_characters</p>
+<p>Given a string, find the length of the longest substring that contains no repeating characters.</p>
+<p>Example: <code>"abcabcbb"</code> gives <code>3</code> (<code>"abc"</code>), <code>"bbbbb"</code> gives <code>1</code>, and <code>"pwwkew"</code> gives <code>3</code> (<code>"wke"</code>).</p>
 <h3>Solution</h3>
-<p>tbd</p>
+<p>We use a sliding window, with a set holding the characters inside it. The right end moves forward one character at a time. If the new character is already in the window, we shrink the window from the left, removing characters from the set, until the duplicate is gone. Then we add the new character and update the best length seen so far.</p>
+<p>Each character enters and leaves the window at most once, so the time complexity is O(n); the set holds at most one entry per distinct character.</p>

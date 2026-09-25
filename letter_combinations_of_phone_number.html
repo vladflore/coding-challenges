@@ -1,4 +1,6 @@
 <h3>Statement</h3>
-<p>letter_combinations_of_phone_number</p>
+<p>Given a string of digits from <code>2</code> to <code>9</code>, return all possible letter combinations the number could represent, using the letters on a telephone keypad (2 = abc, 3 = def, ..., 9 = wxyz). An empty input gives an empty list.</p>
+<p>Example: <code>"23"</code> gives <code>["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"]</code>.</p>
 <h3>Solution</h3>
-<p>tbd</p>
+<p>We build the combinations iteratively. Starting from a list containing the empty string, for each digit we create a new list by appending every letter of that digit to every combination built so far. After the last digit the list holds all combinations, in the order of the keypad letters.</p>
+<p>With up to 4 letters per digit there are at most 4ⁿ combinations for <code>n</code> digits, so time and space are O(4ⁿ · n).</p>

@@ -1,2 +1,6 @@
 <h3>Statement</h3>
+<p>Given a string, return <code>true</code> if some permutation of its characters forms a palindrome, and <code>false</code> otherwise.</p>
+<p>Example: <code>"carerac"</code> gives <code>true</code> (it can be arranged as <code>"racecar"</code>), <code>"code"</code> gives <code>false</code>.</p>
 <h3>Solution</h3>
+<p>In a palindrome every character appears an even number of times, except possibly one character in the middle. So we count how often each character occurs (here with a stream and <code>Collectors.groupingBy</code>) and count how many characters have an odd frequency. A palindrome permutation exists exactly when at most one character has an odd count.</p>
+<p>Time complexity is O(n) and extra space is O(k) for the <code>k</code> distinct characters.</p>

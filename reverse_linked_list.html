@@ -1,4 +1,6 @@
 <h3>Statement</h3>
-<p>reverse_linked_list</p>
+<p>Given the head of a singly linked list, reverse the list and return the new head.</p>
+<p>Example: <code>1 -&gt; 2 -&gt; 3</code> becomes <code>3 -&gt; 2 -&gt; 1</code>.</p>
 <h3>Solution</h3>
-<p>tbd</p>
+<p>We walk through the list once, turning each <code>next</code> pointer around. Three references are needed: <code>previous</code> (the already reversed part, initially <code>None</code>), <code>current</code>, and the saved <code>next</code> node, because changing <code>current.next</code> would otherwise lose the rest of the list. For each node we save its next, point it to <code>previous</code>, then move <code>previous</code> and <code>current</code> one step forward. When <code>current</code> becomes <code>None</code>, <code>previous</code> is the new head.</p>
+<p>Time complexity is O(n) and extra space is O(1).</p>

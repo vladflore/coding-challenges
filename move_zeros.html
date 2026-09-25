@@ -1,4 +1,6 @@
 <h3>Statement</h3>
-<p>move_zeros</p>
+<p>Given an integer array, move all <code>0</code>s to the end while keeping the relative order of the non-zero elements. Do it in place.</p>
+<p>Example: <code>[0, 1, 0, 3, 12]</code> becomes <code>[1, 3, 12, 0, 0]</code>.</p>
 <h3>Solution</h3>
-<p>tbd</p>
+<p>We use two pointers: <code>walk</code> visits every element, and <code>pos</code> marks where the next non-zero element should go. Whenever <code>walk</code> finds a non-zero element, we swap it into position <code>pos</code> and advance <code>pos</code>. Non-zero elements keep their order because they are placed left to right in the order they are found, and the zeros end up behind them.</p>
+<p>Time complexity is O(n) and extra space is O(1).</p>

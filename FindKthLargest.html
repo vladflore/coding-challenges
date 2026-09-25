@@ -1,2 +1,6 @@
 <h3>Statement</h3>
+<p>Given an integer array <code>nums</code> and an integer <code>k</code>, return the <code>k</code>-th largest element in the array. Note that it is the <code>k</code>-th largest element in sorted order, not the <code>k</code>-th distinct element.</p>
+<p>Example: <code>nums = [3, 2, 1, 5, 6, 4]</code>, <code>k = 2</code> gives <code>5</code>.</p>
 <h3>Solution</h3>
+<p>Two approaches are implemented. The simplest sorts the array and returns <code>nums[nums.length - k]</code>, which costs O(n log n).</p>
+<p>The better one keeps a min-heap (<code>PriorityQueue</code>) of at most <code>k</code> elements: every number is added, and whenever the heap grows beyond <code>k</code> the smallest element is removed. After processing all numbers the heap holds the <code>k</code> largest values, and its top (the smallest of them) is the answer. This runs in O(n log k) time with O(k) extra space.</p>

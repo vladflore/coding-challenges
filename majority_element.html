@@ -1,4 +1,6 @@
 <h3>Statement</h3>
-<p>majority_element</p>
+<p>Given an array <code>nums</code> of size <code>n</code>, return the majority element: the element that appears more than <code>⌊n / 2⌋</code> times. You may assume the majority element always exists.</p>
+<p>Example: <code>[2, 2, 1, 1, 1, 2, 2]</code> gives <code>2</code>.</p>
 <h3>Solution</h3>
-<p>tbd</p>
+<p>We count the occurrences of each number with <code>collections.Counter</code> and return the number whose count is greater than <code>len(nums) // 2</code>.</p>
+<p>This takes O(n) time and O(n) extra space for the counts. The Boyer-Moore voting algorithm solves it in O(1) space: it keeps one candidate and a counter, increasing the counter for equal elements and decreasing it for others, switching candidates when the counter drops to zero.</p>

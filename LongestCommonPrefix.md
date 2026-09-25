@@ -1,0 +1,7 @@
+### Statement
+
+Write a function to find the longest common prefix string amongst an array of strings. If there is no common prefix, return an empty string "".
+
+### Solution
+
+We assume the prefix is the first string in the array and we check if each of its characters is present at the same position in all other strings. If a mismatch is found or we go beyond the length of any string, we return the prefix up to that point.

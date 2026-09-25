@@ -17,11 +17,6 @@ def decode_string(string: str) -> str:
         else:
             current_string += char
 
-        for element in reversed(stack):
-            print(element)
-
-        print("-" * 10)
-
     return current_string
 
 if __name__ == '__main__':
